@@ -1,0 +1,112 @@
+
+    @media (max-height: 450px) {
+        body,html{
+            font-size: 8px !important;
+        }   
+    }
+
+    @media (max-height: 500px) and (min-height: 451px) {
+        body,html{
+       font-size: 9px !important;
+        }
+    }
+   
+    @media (max-height: 600px) and (min-height: 501px) {
+        body,html{
+       font-size: 12px !important;
+        }
+    }
+    
+    @media (max-height: 700px) and (min-height: 601px) {
+        body,html{
+       font-size: 11px !important;
+        }
+    } 
+    
+    @media (max-height: 900px) and (min-height: 701px) {
+        body,html{
+        font-size: 14px !important;
+        }
+    }
+
+    @media (min-height: 901px) {
+        body,html{
+       font-size: 16px !important;
+        }
+    }
+
+    .container{
+        background-image:url('bg5.png'); 
+        background-size:100% 100%; 
+        width:100%; 
+        height:100%;
+        max-width:100%;
+    }
+    .top{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 14remm;
+    }
+    .right{
+        width: 78%
+    }
+    .left{
+        width: 22%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .row1{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .row2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 3rem;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 30remm;
+    }
+    .level{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icon{
+        height: 4rem;
+        margin-left: 1rem;
+    }
+    .label{
+        margin-right: 10rem;
+        font-size: 2rem;
+        font-weight: bold;
+        
+    }
+    .label2{
+        font-size: 2rem;
+    }
+    .btn1{
+        background-color:rgb(114, 142, 235);
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+    .table{
+        background-color: rgb(77, 77, 247);
+        width: 80%;
+        height: 16rem;
+        margin-top: 1rem;
+    }
