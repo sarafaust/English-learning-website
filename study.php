@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html style="height:100%">
 
 <head>
@@ -14,7 +13,7 @@
 </head>
 <script type="text/javascript">
  var clickedWordIdx = 0 // is a defualt word
- var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"]
+ var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
 
  function loadData()
  {
@@ -42,6 +41,15 @@
 </script>
 <body style="margin:0; height:100%; max-width:100%" onload="loadData()">
 
+<?php
+    session_start();
+    include("config.php");
+    if(!(isset ($_POST['new_user'] )) AND (!(isset($_POST['exist_user']))))
+    {
+        header('Location: login.php');
+        exit;
+    }
+?>
 
     <div class="container">
         <div class="top">
