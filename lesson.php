@@ -160,7 +160,7 @@
   for (i = 0; i < lessons_array1.length; i++) {
     html_code1 += "<li><button onclick='lessonBtnFunc(1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
   }
-  html_code1+="</nav>"
+  html_code1+="</ul></nav>"
 
   var lessons2 = <?php echo json_encode($lessons_string2); ?>;
   var lessons_array2 = lessons2.split("@@@");
@@ -168,7 +168,7 @@
   for (i = 0; i < lessons_array2.length; i++) {
     html_code2 += "<li><button onclick='lessonBtnFunc(2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
   }
-  html_code2+="</nav>"
+  html_code2+="</ul></nav>"
 
   var lessons3 = <?php echo json_encode($lessons_string3); ?>;
   var lessons_array3 = lessons3.split("@@@");
@@ -176,7 +176,7 @@
   for (i = 0; i < lessons_array3.length; i++) {
     html_code3 += "<li><button onclick='lessonBtnFunc(3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
   }
-  html_code3+="</nav>"
+  html_code3+="</ul></nav>"
 
   document.getElementById("lesson_input").innerHTML=html_code1;
 

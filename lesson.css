@@ -1,8 +1,10 @@
-
+nav ul{height:100%; width:100%; text-align: right;  float: right; list-style-type: none; background-color: white; border-style: groove;}
+nav ul{overflow:hidden; overflow-y:scroll; text-align: right;  float: right;list-style-type: none;background-color: white;border-style: groove;}
+li{background-color:aliceblue; width:100%;border-style: outset;}
     @media (max-height: 450px) {
         body,html{
             font-size: 8px !important;
-        }   
+        }
     }
 
     @media (max-height: 500px) and (min-height: 451px) {
@@ -10,19 +12,19 @@
        font-size: 9px !important;
         }
     }
-   
+
     @media (max-height: 600px) and (min-height: 501px) {
         body,html{
        font-size: 12px !important;
         }
     }
-    
+
     @media (max-height: 700px) and (min-height: 601px) {
         body,html{
        font-size: 11px !important;
         }
-    } 
-    
+    }
+
     @media (max-height: 900px) and (min-height: 701px) {
         body,html{
         font-size: 14px !important;
@@ -36,9 +38,9 @@
     }
 
     .container{
-        background-image:url('bg5.png'); 
-        background-size:100% 100%; 
-        width:100%; 
+        background-image:url('bg5.png');
+        background-size:100% 100%;
+        width:100%;
         height:100%;
         max-width:100%;
     }
@@ -92,7 +94,7 @@
         margin-right: 10rem;
         font-size: 2rem;
         font-weight: bold;
-        
+
     }
     .label2{
         font-size: 2rem;
@@ -109,4 +111,9 @@
         width: 80%;
         height: 16rem;
         margin-top: 1rem;
+    }
+    .lessonBtn{
+        width: 100%;
+        text-align: right;
+        border: burlywood;
     }
