@@ -130,11 +130,11 @@
 
             </div>
             <div class="level">
-                <button class="btn1"> חזרה </button>
-                <button class="btn1"> שאלות נוספות </button>
-                <button class="btn1"> בחן את עצמך</button>
-                <button class="btn1">   תירגול</button>
-                <button class="btn1"> למד אותיות/מילים </button>
+                <button class="btn1" onclick="updateBtn(againBtn)"> חזרה </button>
+                <button class="btn1" onclick="updateBtn(addQWordBtn)"> שאלות נוספות </button>
+                <button class="btn1" onclick="updateBtn(testWordBtn)"> בחן את עצמך</button>
+                <button class="btn1" onclick="updateBtn(exerciseBtn)">   תירגול</button>
+                <button class="btn1" onclick="updateBtn(learnWordBtn)"> למד אותיות/מילים </button>
             </div>
 
         </div>
@@ -145,15 +145,20 @@
 </body>
 
 <script type="text/javascript">
-    function lessonBtnFunc(lesson)
-    {
-        document.getElementById("lesson_input").innerHTML=html_code1;
-    }
+  var learnWordBtn = 1;
+  var exerciseBtn = 2;
+  var testWordBtn = 3;
+  var addQWordBtn = 4;
+  var againBtn = 5;
+
+  var lastBtn = "";
+  var lessonToLearnArray = ""
+  var lessonToLearnLesson = ""
   var lessons1 = <?php echo json_encode($lessons_string1); ?>;
   var lessons_array1 = lessons1.split("@@@");
   var html_code1 = "<nav>"+'\n'+"<ul>";
   for (i = 0; i < lessons_array1.length; i++) {
-    html_code1 += "<li><button class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
+    html_code1 += "<li><button onclick='lessonBtnFunc(1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
   }
   html_code1+="</nav>"
 
@@ -161,7 +166,7 @@
   var lessons_array2 = lessons2.split("@@@");
   var html_code2 = "<nav>"+'\n'+"<ul>";
   for (i = 0; i < lessons_array2.length; i++) {
-    html_code2 += "<li><button class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
+    html_code2 += "<li><button onclick='lessonBtnFunc(2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
   }
   html_code2+="</nav>"
 
@@ -169,7 +174,7 @@
   var lessons_array3 = lessons3.split("@@@");
   var html_code3 = "<nav>"+'\n'+"<ul>";
   for (i = 0; i < lessons_array3.length; i++) {
-    html_code3 += "<li><button onclick='lessonBtnFunc("+lessons_array3[i]+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
+    html_code3 += "<li><button onclick='lessonBtnFunc(3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
   }
   html_code3+="</nav>"
 
@@ -191,5 +196,19 @@
      }
  }
 
+     function lessonBtnFunc(list, lesson)
+    {
+        lessonToLearnLesson = lesson;
+        lessonToLearnArray = list;
+
+    }
+
+    function updateBtn(btn)
+    {
+        lastBtn = btn;
+        alert(lessonToLearnLesson)
+        alert(lessonToLearnArray)
+        alert(btn)
+    }
 </script>
 </html>
