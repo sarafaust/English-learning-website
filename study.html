@@ -13,16 +13,31 @@
   <title>English Demo</title>
 </head>
 <script type="text/javascript">
+ var clickedWordIdx = 0 // is a defualt word
+ var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"]
+
  function loadData()
  {
-     var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"]
      var html_code = "<nav id='navWordsList'>"+'\n'+"<ul>";
       for (i = 0; i < wordsList.length; i++) {
-        html_code += "<li><button onclick='pressWord("+wordsList[i]+")' class='words'>"+wordsList[i]+"</button></li>";
+        html_code += "<li><button onclick='pressWord("+i+")' class='words'>"+wordsList[i]+"</button></li>";
       }
       html_code+="</ul></nav>"
       document.getElementById("WorldList").innerHTML=html_code;
+      document.getElementById("wordCharId").innerHTML="A";
+      document.getElementById("worldHebId").innerHTML="אי";
+      pressWord(0);
+
  }
+
+ function pressWord(wordIdx)
+ {
+    // var urlString = 'url(buttons/' + imagePrefix + '.png)';
+    var urlString = 'url(A.jpg)';
+    clickedWordIdx = wordIdx;
+    document.getElementById("imgWordId").style.backgroundImage =  urlString;
+ }
+
 
 </script>
 <body style="margin:0; height:100%; max-width:100%" onload="loadData()">
@@ -50,10 +65,9 @@
                 <br>
                 <progress value="1" max="26" class="prog"></progress>
                 <div class="left_colomn">
-                    <div class="div"> האות/המילה </div>
-                    <div class="div"> part of speech  חלק הדיבור </div>
-                    <div class="div">  האות/המילה בעברית </div>
-                    <div class="div">   המילה באנגלית באותיות עבריות</div>
+                    <div class="div" id="wordCharId"> האות/המילה </div>
+                    <div class="div" id="worldHebId"> part of speech  חלק הדיבור </div>
+
                 </div>
                 <div class="row">
                     <button class="btn1"> הבא </button>
@@ -69,8 +83,8 @@
                 </div>
                 <div class="row2">
                     <button class="btn1"> הפעל אנמציה </button>
-                    <div class="table">
-                        תמונה
+                    <div id="imgWordId" class="imageWord">
+
                     </div>
                 </div>
                 <div class="row3">

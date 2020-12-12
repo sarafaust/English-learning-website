@@ -1,9 +1,6 @@
 nav ul{height:8rem; width:100%; padding-left: 0;text-align: left;  float: left; list-style-type: none; background-color: white; border-style: groove;}
 nav ul{overflow:hidden;width:100%;  overflow-y:scroll; text-align: left;  float: left;list-style-type: none;background-color: white;border-style: groove;}
 
-ul{
-    width: 100%;
-  }
     @media (max-height: 450px) {
         body,html{
             font-size: 8px !important;
@@ -163,9 +160,19 @@ ul{
         width: 100%;
         text-align: left;
         border: burlywood;
+
     }
 
     #wordsList{
         height: 8rem;
         width: 100%;
+
+    }
+    .imageWord{
+        background-color: cornflowerblue;
+        width: 35%;
+        height: 13rem;
+        margin-top: 1rem;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
