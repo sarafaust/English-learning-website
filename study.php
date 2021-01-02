@@ -12,6 +12,7 @@
   <title>English Demo</title>
 </head>
 <script type="text/javascript">
+ var GO_FLAG = 99;
  var clickedWordIdx = 0 // is a defualt word
  var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
  var wordsListHeb = ["אֵי","בּי","סִי", "דִי", "אִי", "אֶף", "גִ'י", "'אֵיץ","אַי", "גֵ'י", "קֵי", "אֶל", "אֶם", "אֶן", "אוֹוּ", "פִּי", "קְיוּ", "אַר", "אֶס", "טִי","יוּ","בִי","דַבְּליוּ", "אֶקְס","וּאַי", "זֶד"]
@@ -43,7 +44,7 @@
  , " . Zראה בדמיונך זבוב שמותיר אחריו תוי בצורת האות "]
  function loadData()
  {
-     var html_code = "<select size='5' name='' id='' class='form-control'>"+'\n';
+     var html_code = "<select size='5' name='' id='selectListID' class='form-control'>"+'\n';
       for (i = 0; i < wordsList.length; i++) {
         html_code += "<option   onclick='pressWord("+i+")' value="+i+">"+wordsList[i]+"</option>";
       }
@@ -57,13 +58,20 @@
 
  function pressWord(wordIdx)
  {
+    if(wordIdx == GO_FLAG)
+    {
+        var e = document.getElementById("selectListID");
+        wordIdx = e.options[e.selectedIndex].value;
+    }
+    wordIdx = Math.min(25, wordIdx);
+    wordIdx = Math.max(0, wordIdx);
     // var urlString = 'url(buttons/' + imagePrefix + '.png)';
     var urlString = 'url(English4Beginners/LEVEL1/LESSON1/pic/'+wordsList[wordIdx]+'.jpg)';
     clickedWordIdx = wordIdx;
     document.getElementById("imgWordId").style.backgroundImage =  urlString;
     document.getElementById("imgWordId").src =  'English4Beginners/LEVEL1/LESSON1/pic/'+wordsList[wordIdx]+'.jpg';
     document.getElementById("textMemHelpID").innerHTML  =  memHelp[wordIdx];
-    document.getElementById("progressBarID").value = wordIdx +1 ;
+    document.getElementById("progressBarID").value =Math.min( wordIdx +1, 26) ;
     document.getElementById("wordCharId").innerHTML= wordsList[wordIdx];
     document.getElementById("worldHebId").innerHTML=wordsListHeb[wordIdx];
  }
@@ -100,13 +108,13 @@
 
                 </div>
                 <div class="row">
-                    <button class="btn1"> הבא </button>
-                    <button class="btn1">  הקודם </button>
+                    <button class="btn1" id="nextBtnId" onclick="pressWord(clickedWordIdx+1)"> הבא </button>
+                    <button class="btn1" id="beforeBtnId" onclick="pressWord(clickedWordIdx-1)">  הקודם </button>
                 </div>
             </div>
             <div class="colomn">
                 <div class="row1">
-                    <button class="btn1"> דלג לאות/למילה </button>
+                    <button class="btn1" onclick="pressWord(GO_FLAG)"> דלג לאות/למילה </button>
                     <div class="table" id="WorldList">
 
                     </div>
