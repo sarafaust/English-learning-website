@@ -107,8 +107,12 @@
 
                     </div>
                 </div>
-                <div class="row2">
-                    לחץ על התמונה להגדלה
+                <div id="memHelpBorderID">
+                     <div id="memHelpTextId"> עזרי זיכרון </div>
+
+                    <div class="row2">
+                    <div id="text_row2"> לחץ על התמונה להגדלה </div>
+
                     <div id="myModal" class="modal">
                           <span class="close">&times;</span>
                           <img class="modal-content" id="img01">
@@ -122,8 +126,9 @@
                     <div  id="textMemHelpID" class="text">
 
                     </div>
-
                 </div>
+                </div>
+
             </div>
         </div>
 
