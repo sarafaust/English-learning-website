@@ -124,6 +124,7 @@ nav ul{overflow:hidden;width:100%;  overflow-y:scroll; text-align: left;  float:
     }
     .prog{
         width: 40%;
+        color: green;
     }
     .label{
         font-size: 2rem;

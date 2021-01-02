@@ -62,6 +62,7 @@
     document.getElementById("imgWordId").style.backgroundImage =  urlString;
     document.getElementById("imgWordId").src =  'English4Beginners/LEVEL1/LESSON1/pic/'+wordsList[wordIdx]+'.jpg';
     document.getElementById("textMemHelpID").innerHTML  =  memHelp[wordIdx];
+    document.getElementById("progressBarID").value = wordIdx +1 ;
  }
 
 </script>
@@ -89,7 +90,7 @@
             <div class="colomn">
                 <label class="label"> אוצר מילים לרמה 1 שיעור 1</label>
                 <br>
-                <progress value="1" max="26" class="prog"></progress>
+                <progress value="1" max="26" class="prog" id="progressBarID"></progress>
                 <div class="left_colomn">
                     <div class="div" id="wordCharId"> האות/המילה </div>
                     <div class="div" id="worldHebId"> part of speech  חלק הדיבור </div>
