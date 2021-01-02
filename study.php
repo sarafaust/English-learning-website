@@ -14,6 +14,7 @@
 <script type="text/javascript">
  var clickedWordIdx = 0 // is a defualt word
  var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
+ var wordsListHeb = ["אֵי","בּי","סִי", "דִי", "אִי", "אֶף", "גִ'י", "'אֵיץ","אַי", "גֵ'י", "קֵי", "אֶל", "אֶם", "אֶן", "אוֹוּ", "פִּי", "קְיוּ", "אַר", "אֶס", "טִי","יוּ","בִי","דַבְּליוּ", "אֶקְס","וּאַי", "זֶד"]
  var memHelp = [". A ראה בדמיונך איש שבמקום עיניים יש לו את האות  "
  , " .  B ראה בדמיונך ביס בצורת האות  "
  , " .  Cראה בדמיונך סיכה בצורת האות  "
@@ -63,6 +64,8 @@
     document.getElementById("imgWordId").src =  'English4Beginners/LEVEL1/LESSON1/pic/'+wordsList[wordIdx]+'.jpg';
     document.getElementById("textMemHelpID").innerHTML  =  memHelp[wordIdx];
     document.getElementById("progressBarID").value = wordIdx +1 ;
+    document.getElementById("wordCharId").innerHTML= wordsList[wordIdx];
+    document.getElementById("worldHebId").innerHTML=wordsListHeb[wordIdx];
  }
 
 </script>
