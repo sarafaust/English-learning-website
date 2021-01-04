@@ -105,6 +105,7 @@ li{background-color:aliceblue; width:100%;border-style: outset;}
         margin-top: 1rem;
         margin-right: 3rem;
         margin-left: 3rem;
+        width: 50%;
     }
     .table{
         background-color: rgb(77, 77, 247);

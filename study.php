@@ -12,6 +12,9 @@
   <title>English Demo</title>
 </head>
 <script type="text/javascript">
+
+ // DATA:
+
  var GO_FLAG = 99;
  var clickedWordIdx = 0 // is a defualt word
  var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
@@ -42,6 +45,9 @@
  , " . Xראה בדמיונך שודד מקסיקני עם חגורת נפץ בצורת "
  , " . Yראה בדמיונך איש הוואי מחזיק את ידיו בצורת האות "
  , " . Zראה בדמיונך זבוב שמותיר אחריו תוי בצורת האות "]
+
+
+ //SCRIPTS
  function loadData()
  {
      var html_code = "<select size='5' name='' id='selectListID' class='form-control'>"+'\n';
@@ -147,7 +153,11 @@
     </div>
 
 <script>
-    var modal = document.getElementById("myModal");
+
+//SCRIPT TO ANIMATION.
+
+
+var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById("imgWordId");

@@ -145,6 +145,7 @@
 </body>
 
 <script type="text/javascript">
+
   var learnWordBtn = 1;
   var exerciseBtn = 2;
   var testWordBtn = 3;
