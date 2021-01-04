@@ -6,12 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="login.css">
-   
+
 
   <title>English Demo</title>
 </head>
+
+<script>
+    localStorage.setItem('AudioMode', 'true');
+
+    function changeAudioMode()
+    {
+        var audio_m = localStorage.getItem('AudioMode')
+        //first setting
+        new_mode = (audio_m == 'true')? 'false' : 'true';
+        localStorage.setItem('AudioMode', new_mode);
+    }
+
+</script>
+
 
 <?php
 include("config.php");
@@ -22,12 +36,12 @@ include("config.php");
  {
      $english_to="לאוניברסיטה";
  }
- 
+
  if(isset($_POST['students']))
  {
      $english_to="לתלמידים";
  }
- 
+
  if(isset ($_POST['beginners']))
  {
      $english_to="למתחילים";
@@ -36,15 +50,15 @@ include("config.php");
 
   if($_SESSION['re_username'] == 'True')
   {
-    // username and password sent from form 
+    // username and password sent from form
     $_SESSION['re_username']= 'False';
     $message = "This username already exist, please insert new one.";
     echo "<script type='text/javascript'>alert('$message');</script>";
   }
-  
+
   if($_SESSION['Login_error'] == 'True')
   {
-    // username and password sent from form 
+    // username and password sent from form
     $_SESSION['Login_error']= 'False';
     $message = "Error. username or password is incorrect, Please insert again.";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -56,28 +70,28 @@ include("config.php");
 
     <div class="container">
         <div class="row1">
-                    <a href="volume" ><img class="icon" src=".\assets\images\png\volT.png"></a>
-                    <a href="language" ><img class="icon" src=".\assets\images\png\LangEng.png"></a>
-                    <a href="help" ><img class="icon" src=".\assets\images\png\help.png"></a>
-                    <a href="closepage" ><img class="icon" src=".\assets\images\png\close.png"></a>
+                    <a  href="" onclick="changeAudioMode()"><img class="icon" src=".\assets\images\png\volT.png"></a>
+                    <a href="https://www.english4students.com/hebrew-home/guides" ><img class="icon" src=".\assets\images\png\LangEng.png"></a>
+                    <a href="https://www.english4students.com/hebrew-home/guides" ><img class="icon" src=".\assets\images\png\help.png"></a>
+                    <a href="http://clickenglish.unaux.com/first_page.html"  ><img class="icon" src=".\assets\images\png\close.png"></a>
         </div>
         <div class="header">
             <label>עמוד כניסה</label>
         </div>
         <div class="row3">
             <div class="login">
-                    
+
                     <form action="lesson.php" method="post">
                     <label class="label"> :משתמש חדש</label>
                     <br> <br>
                     <input class="input" type="text"  name='username' placeholder="אנא בחר שם משתמש" required>
                     <br> <br>
-                    <input class="input" type="text"  name='password'  placeholder="אנא בחר סיסמא" required>
-                   
-                    <br> <br>  
+                    <input class="input" type="password"  name='password'  placeholder="אנא בחר סיסמא" required>
+
+                    <br> <br>
                    <input class="btn1" type="submit" name="new_user" value="הירשם">
 
-                
+
                 </form>
             </div>
             <div class="login">
@@ -86,18 +100,18 @@ include("config.php");
                     <br> <br>
                     <input class="input" type="text"  name='username'  placeholder="שם משתמש" required>
                     <br> <br>
-                    <input class="input" type="text"  name='password' placeholder="סיסמא" required>
-                   
-                    <br> <br>  
+                    <input class="input" type="password"  name='password' placeholder="סיסמא" required>
+
+                    <br> <br>
                    <input class="btn1" type="submit" name="exist_user" value="כניסה">
 
-                
+
                 </form>
 
 
             </div>
         </div>
-        
+
     </div>
 </body>
 </html>
