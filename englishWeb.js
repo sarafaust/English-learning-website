@@ -30,3 +30,20 @@ function closeBtn()
 {
    window.open("http://clickenglish.unaux.com/first_page.html", "_blank");
 }
+
+function playBtn()
+{
+
+}
+
+//lesson page
+function helperForBegginsPage()
+{
+    window.open("http://clickenglish.unaux.com/short_help_English4Beginners.html", "_blank");
+}
+
+//study page:
+function grammerHelper()
+{
+
+}

@@ -101,12 +101,12 @@
                 <button class="btn1"> מבחן לרמה 1  </button>
                 <button class="btn1"> ציונים  </button>
                 <button class="btn1"> הוראות מלאות  </button>
-                <button class="btn1"> עזרה מקוצרת  </button>
+                <button class="btn1" onclick="helperForBegginsPage()"> עזרה מקוצרת  </button>
             </div>
             <div class="right">
                 <div class="row1">
                     <label class="label"> אנגלית <?php echo $english_to;?></label>
-                    <a onclick="changeAudioMode()" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a onclick="changeAudioModeBtn()" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                     <a onclick="languegeModeBtn()"  ><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
                     <a onclick="printPageBtn()" ><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
                     <a onclick="settingBtn()" ><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
