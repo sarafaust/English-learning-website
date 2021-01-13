@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="lesson.css">
-
+  <link rel="stylesheet" href="englishWeb.css">
 
   <title>English Demo</title>
 </head>
 
 <body style="margin:0; height:100%; max-width:100%">
+<script src="englishWeb.js"></script>
 
 <?php
     session_start();
@@ -105,13 +106,12 @@
             <div class="right">
                 <div class="row1">
                     <label class="label"> אנגלית <?php echo $english_to;?></label>
-                    <a href="volume" ><img class="icon" src=".\assets\images\png\volT.png"></a>
-                    <a href="language" ><img class="icon" src=".\assets\images\png\LangEng.png"></a>
-                    <a href="print" ><img class="icon" src=".\assets\images\png\print.png"></a>
-                    <a href="setting" ><img class="icon" src=".\assets\images\png\setting.png"></a>
-                    <a href="help" ><img class="icon" src=".\assets\images\png\help.png"></a>
-                    <a href="minimize" ><img class="icon" src=".\assets\images\png\min.png"></a>
-                    <a href="closepage" ><img class="icon" src=".\assets\images\png\close.png"></a>
+                    <a onclick="changeAudioMode()" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a onclick="languegeModeBtn()"  ><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                    <a onclick="printPageBtn()" ><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a onclick="settingBtn()" ><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
+                    <a onclick="infoBtn()" ><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a onclick="closeBtn()" ><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
                 <div class="row2">
                     <label class="label2"> <?php echo $myusername;?> שלום</label>
@@ -145,7 +145,6 @@
 </body>
 
 <script type="text/javascript">
-
   var learnWordBtn = 1;
   var exerciseBtn = 2;
   var testWordBtn = 3;
@@ -161,7 +160,7 @@
   for (i = 0; i < lessons_array1.length; i++) {
     html_code1 += "<li><button onclick='lessonBtnFunc(1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
   }
-  html_code1+="</ul></nav>"
+  html_code1+="</nav>"
 
   var lessons2 = <?php echo json_encode($lessons_string2); ?>;
   var lessons_array2 = lessons2.split("@@@");
@@ -169,7 +168,7 @@
   for (i = 0; i < lessons_array2.length; i++) {
     html_code2 += "<li><button onclick='lessonBtnFunc(2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
   }
-  html_code2+="</ul></nav>"
+  html_code2+="</nav>"
 
   var lessons3 = <?php echo json_encode($lessons_string3); ?>;
   var lessons_array3 = lessons3.split("@@@");
@@ -177,7 +176,7 @@
   for (i = 0; i < lessons_array3.length; i++) {
     html_code3 += "<li><button onclick='lessonBtnFunc(3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
   }
-  html_code3+="</ul></nav>"
+  html_code3+="</nav>"
 
   document.getElementById("lesson_input").innerHTML=html_code1;
 
@@ -207,9 +206,10 @@
     function updateBtn(btn)
     {
         lastBtn = btn;
-        alert(lessonToLearnLesson)
-        alert(lessonToLearnArray)
-        alert(btn)
+        if(btn == learnWordBtn)
+        {
+            window.location.href="study.php";
+        }
     }
 </script>
 </html>

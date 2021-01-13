@@ -8,24 +8,15 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="login.css">
-
+  <link rel="stylesheet" href="englishWeb.css">
 
   <title>English Demo</title>
 </head>
 
 <script>
     localStorage.setItem('AudioMode', 'true');
-
-    function changeAudioMode()
-    {
-        var audio_m = localStorage.getItem('AudioMode')
-        //first setting
-        new_mode = (audio_m == 'true')? 'false' : 'true';
-        localStorage.setItem('AudioMode', new_mode);
-    }
-
 </script>
-
+<script src="englishWeb.js"></script>
 
 <?php
 include("config.php");
@@ -70,10 +61,10 @@ include("config.php");
 
     <div class="container">
         <div class="row1">
-                    <a  href="" onclick="changeAudioMode()"><img class="icon" src=".\assets\images\png\volT.png"></a>
-                    <a href="https://www.english4students.com/hebrew-home/guides" ><img class="icon" src=".\assets\images\png\LangEng.png"></a>
-                    <a href="https://www.english4students.com/hebrew-home/guides" ><img class="icon" src=".\assets\images\png\help.png"></a>
-                    <a href="http://clickenglish.unaux.com/first_page.html"  ><img class="icon" src=".\assets\images\png\close.png"></a>
+                    <a  href="" onclick="changeAudioModeBtn()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a href="" onclick="languegeModeBtn()" ><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                    <a href="" onclick="infoBtn()" ><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a href="" onclick="closeBtn()"  ><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
         </div>
         <div class="header">
             <label>עמוד כניסה</label>

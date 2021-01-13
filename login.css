@@ -2,7 +2,7 @@
     @media (max-height: 450px) {
         body,html{
             font-size: 8px !important;
-        }   
+        }
     }
 
     @media (max-height: 500px) and (min-height: 451px) {
@@ -10,19 +10,19 @@
        font-size: 9px !important;
         }
     }
-   
+
     @media (max-height: 600px) and (min-height: 501px) {
         body,html{
        font-size: 12px !important;
         }
     }
-    
+
     @media (max-height: 700px) and (min-height: 601px) {
         body,html{
        font-size: 11px !important;
         }
-    } 
-    
+    }
+
     @media (max-height: 900px) and (min-height: 701px) {
         body,html{
         font-size: 14px !important;
@@ -36,9 +36,9 @@
     }
 
     .container{
-        background-image:url('bg5.png'); 
-        background-size:100% 100%; 
-        width:100%; 
+        background-image:url('bg5.png');
+        background-size:100% 100%;
+        width:100%;
         height:100%;
         max-width:100%;
     }
@@ -50,6 +50,11 @@
     .icon{
         height: 4rem;
         margin-left: 1rem;
+
+    }
+
+    .icon:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
     .header{
         display: flex;
@@ -71,7 +76,7 @@
         justify-content: center;
         align-items: center;
         width: 50%;
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
     }
     .label{
         font-size: 2.5rem;
@@ -83,5 +88,4 @@
         background-color:rgb(114, 142, 235);
         font-size: 1rem;
     }
-    
-    
+

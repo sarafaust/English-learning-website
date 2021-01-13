@@ -7,14 +7,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="study.css">
-
+  <link rel="stylesheet" href="englishWeb.css">
 
   <title>English Demo</title>
 </head>
 <script type="text/javascript">
-
- // DATA:
-
  var GO_FLAG = 99;
  var clickedWordIdx = 0 // is a defualt word
  var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
@@ -45,9 +42,6 @@
  , " . Xראה בדמיונך שודד מקסיקני עם חגורת נפץ בצורת "
  , " . Yראה בדמיונך איש הוואי מחזיק את ידיו בצורת האות "
  , " . Zראה בדמיונך זבוב שמותיר אחריו תוי בצורת האות "]
-
-
- //SCRIPTS
  function loadData()
  {
      var html_code = "<select size='5' name='' id='selectListID' class='form-control'>"+'\n';
@@ -94,12 +88,12 @@
             </div>
             <div class="right">
                 <div>
-                    <a href="play" ><img class="icon" src=".\assets\images\png\play.png"></a>
-                    <a href="volume" ><img class="icon" src=".\assets\images\png\volT.png"></a>
-                    <a href="print" ><img class="icon" src=".\assets\images\png\print.png"></a>
-                    <a href="help" ><img class="icon" src=".\assets\images\png\help.png"></a>
-                    <a href="minimize" ><img class="icon" src=".\assets\images\png\min.png"></a>
-                    <a href="closepage" ><img class="icon" src=".\assets\images\png\close.png"></a>
+                    <a href onclick="playBtn()" ><img class="serviceBtn" src=".\assets\images\png\play.png"></a>
+                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\min.png"></a>
+                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
             </div>
         </div>
@@ -153,11 +147,7 @@
     </div>
 
 <script>
-
-//SCRIPT TO ANIMATION.
-
-
-var modal = document.getElementById("myModal");
+    var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById("imgWordId");
