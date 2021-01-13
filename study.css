@@ -273,3 +273,18 @@ nav ul{overflow:hidden;width:100%;  overflow-y:scroll; text-align: left;  float:
     margin-right: 3%;
     text-align: right;
 }
+
+//סימני ניקוד
+.tftable {margin-right: 3%; text-align: right;font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;width: 100%;}
+.tftable th {text-align: right; font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.tftable tr {text-align: right; background-color:#d4e3e5;}
+.tftable td {text-align: right; font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5; width:2%;}
+.tftable tr:hover {background-color:#ffffff;}
+
+#grammerContentText
+{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #304b50;
+}
