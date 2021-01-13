@@ -13,6 +13,14 @@
 
   <title>English Demo</title>
 </head>
+
+<style type="text/css">
+.tftable {text-align: right;font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+.tftable th {text-align: right; font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.tftable tr {text-align: right; background-color:#d4e3e5;}
+.tftable td {text-align: right; font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.tftable tr:hover {background-color:#ffffff;}
+</style>
 <script src="englishWeb.js"></script>
 <body style="margin:0; height:100%; max-width:100%">
 
@@ -58,5 +66,78 @@
 
 
     </div>
+
+    <div id="grapperWrpr" class="grammer">
+    <span class="close">&times;</span>
+    <img src="https://www.w3schools.com/images/lamp.jpg" class="grammer-content" id="content">
+
+    </div>
+    <div id="gramerWordID" class="grammerWord">
+    </div>
+
+                    <div id="grammerWrpr" class="modal">
+                          <span class="close" onclick="closeID()">&times;</span>
+                          <div  class="modal-content" id="grammerContentText" >
+                             מפני שיש יותר צלילים בשפה האנגלית מאשר בשפה העברית, השתמשנו במקצת סימני הניקוד בצורה שונה מהשימוש הרגיל שלהם בעברית.
+אנא האזן לרשימת הדוגמאות הבאות.
+                         </div>
+                           <div  class="modal-content" id="grammerContent" >
+
+<table class="tftable" border="1">
+<tr><th>תעתיק</th><th>עזרי זכרון</th><th>אנגלית</th><th>עברית</th></tr>
+<tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td><td>Row:1 Cell:4</td></tr>
+<tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td><td>Row:2 Cell:4</td></tr>
+<tr><td>Row:3 Cell:1</td><td>Row:3 Cell:2</td><td>Row:3 Cell:3</td><td>Row:3 Cell:4</td></tr>
+<tr><td>Row:4 Cell:1</td><td>Row:4 Cell:2</td><td>Row:4 Cell:3</td><td>Row:4 Cell:4</td></tr>
+<tr><td>Row:5 Cell:1</td><td>Row:5 Cell:2</td><td>Row:5 Cell:3</td><td>Row:5 Cell:4</td></tr>
+<tr><td>Row:6 Cell:1</td><td>Row:6 Cell:2</td><td>Row:6 Cell:3</td><td>Row:6 Cell:4</td></tr>
+<tr><td>Row:7 Cell:1</td><td>Row:7 Cell:2</td><td>Row:7 Cell:3</td><td>Row:7 Cell:4</td></tr>
+<tr><td>Row:8 Cell:1</td><td>Row:8 Cell:2</td><td>Row:8 Cell:3</td><td>Row:8 Cell:4</td></tr>
+<tr><td>Row:9 Cell:1</td><td>Row:9 Cell:2</td><td>Row:9 Cell:3</td><td>Row:9 Cell:4</td></tr>
+<tr><td>Row:10 Cell:1</td><td>Row:10 Cell:2</td><td>Row:10 Cell:3</td><td>Row:10 Cell:4</td></tr>
+<tr><td>Row:11 Cell:1</td><td>Row:11 Cell:2</td><td>Row:11 Cell:3</td><td>Row:11 Cell:4</td></tr>
+<tr><td>Row:12 Cell:1</td><td>Row:12 Cell:2</td><td>Row:12 Cell:3</td><td>Row:12 Cell:4</td></tr>
+<tr><td>Row:13 Cell:1</td><td>Row:13 Cell:2</td><td>Row:13 Cell:3</td><td>Row:13 Cell:4</td></tr>
+<tr><td>Row:14 Cell:1</td><td>Row:14 Cell:2</td><td>Row:14 Cell:3</td><td>Row:14 Cell:4</td></tr>
+<tr><td>Row:15 Cell:1</td><td>Row:15 Cell:2</td><td>Row:15 Cell:3</td><td>Row:15 Cell:4</td></tr>
+<tr><td>Row:16 Cell:1</td><td>Row:16 Cell:2</td><td>Row:16 Cell:3</td><td>Row:16 Cell:4</td></tr>
+<tr><td>Row:17 Cell:1</td><td>Row:17 Cell:2</td><td>Row:17 Cell:3</td><td>Row:17 Cell:4</td></tr>
+<tr><td>Row:18 Cell:1</td><td>Row:18 Cell:2</td><td>Row:18 Cell:3</td><td>Row:18 Cell:4</td></tr>
+<tr><td>Row:19 Cell:1</td><td>Row:19 Cell:2</td><td>Row:19 Cell:3</td><td>Row:19 Cell:4</td></tr>
+</table>
+
+                         </div>
+                    </div>
+
+            <div class="left">
+                <button id="grammerhlpID" class="btn1"> סימני ניקוד </button>
+            </div>
+
 </body>
+
+<script>
+var modal = document.getElementById("grammerWrpr");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var contentGr = document.getElementById("grammerhlpID");
+var captionText = document.getElementById("caption");
+contentGr.onclick = function(){
+  modal.style.display = "block";
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  alert();
+
+  modal.style.display = "none";
+}
+function closeID()
+{
+  modal.style.display = "none";
+}
+</script>
+
 </html>
