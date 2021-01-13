@@ -11,6 +11,7 @@
 
   <title>English Demo</title>
 </head>
+<script src="englishWeb.js"></script>
 <script type="text/javascript">
  var GO_FLAG = 99;
  var clickedWordIdx = 0 // is a defualt word
@@ -89,11 +90,10 @@
             <div class="right">
                 <div>
                     <a href onclick="playBtn()" ><img class="serviceBtn" src=".\assets\images\png\play.png"></a>
-                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
-                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
-                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
-                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\min.png"></a>
-                    <a href onclick="playBtn()"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                    <a href onclick="changeAudioMode()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a href onclick="printPageBtn()"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a href onclick="infoBtn()"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a href onclick="closeBtn()"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
             </div>
         </div>
