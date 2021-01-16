@@ -89,11 +89,11 @@
             </div>
             <div class="right">
                 <div>
-                    <a href onclick="playBtn()" ><img class="serviceBtn" src=".\assets\images\png\play.png"></a>
-                    <a href onclick="changeAudioMode()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
-                    <a href onclick="printPageBtn()"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
-                    <a href onclick="infoBtn()"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
-                    <a href onclick="closeBtn()"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                    <a href onclick="playBtn()" title="הפעל"><img class="serviceBtn" src=".\assets\images\png\play.png"></a>
+                    <a href onclick="changeAudioMode()" title="שמע"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a href onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a href onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a href onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
             </div>
         </div>

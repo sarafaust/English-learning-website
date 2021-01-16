@@ -42,8 +42,18 @@ function helperForBegginsPage()
     window.open("http://clickenglish.unaux.com/short_help_English4Beginners.html", "_blank");
 }
 
+function fullInstructions()
+{
+    window.open("http://clickenglish.unaux.com/UG.pdf", "_blank");
+}
 //study page:
 function grammerHelper()
 {
 
+}
+
+//conatins data in page:
+function relevantBtn(pageName)
+{
+    // var
 }

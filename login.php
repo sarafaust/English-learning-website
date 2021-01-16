@@ -61,10 +61,10 @@ include("config.php");
 
     <div class="container">
         <div class="row1">
-                    <a  href="" onclick="changeAudioModeBtn()"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
-                    <a href="" onclick="languegeModeBtn()" ><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
-                    <a href="" onclick="infoBtn()" ><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
-                    <a href="" onclick="closeBtn()"  ><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                    <a  href="" onclick="changeAudioModeBtn()" title="שמע"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a href="" onclick="languegeModeBtn()" title="שפות"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                    <a href="" onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a href="" onclick="closeBtn()"  title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
         </div>
         <div class="header">
             <label>עמוד כניסה</label>

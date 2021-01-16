@@ -100,18 +100,18 @@
             <div class="left">
                 <button class="btn1"> מבחן לרמה 1  </button>
                 <button class="btn1"> ציונים  </button>
-                <button class="btn1"> הוראות מלאות  </button>
+                <button class="btn1" onclick="fullInstructions()"> הוראות מלאות  </button>
                 <button class="btn1" onclick="helperForBegginsPage()"> עזרה מקוצרת  </button>
             </div>
             <div class="right">
                 <div class="row1">
                     <label class="label"> אנגלית <?php echo $english_to;?></label>
-                    <a onclick="changeAudioModeBtn()" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
-                    <a onclick="languegeModeBtn()"  ><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
-                    <a onclick="printPageBtn()" ><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
-                    <a onclick="settingBtn()" ><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
-                    <a onclick="infoBtn()" ><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
-                    <a onclick="closeBtn()" ><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                    <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                    <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a onclick="settingBtn()" title="הגדות"><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
+                    <a onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
                 <div class="row2">
                     <label class="label2"> <?php echo $myusername;?> שלום</label>
