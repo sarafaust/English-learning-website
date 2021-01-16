@@ -12,7 +12,7 @@
   <title>English Demo</title>
 </head>
 
-<body style="margin:0; height:100%; max-width:100%">
+<body style="margin:0; height:100%; max-width:100%" >
 <script src="englishWeb.js"></script>
 
 <?php
@@ -98,8 +98,8 @@
     <div class="container">
         <div class="top">
             <div class="left">
-                <button class="btn1"> מבחן לרמה 1  </button>
-                <button class="btn1"> ציונים  </button>
+                <button class="btn1" id="testBtnID"> מבחן לרמה   </button>
+                <button class="btn1" id="gradsBtnID"> ציונים  </button>
                 <button class="btn1" onclick="fullInstructions()"> הוראות מלאות  </button>
                 <button class="btn1" onclick="helperForBegginsPage()"> עזרה מקוצרת  </button>
             </div>
@@ -122,19 +122,19 @@
         <div class="bottom">
             <label class="label2"> לבחירת שיעור אחר אנה בחר מהרשימה</label>
             <div class="level">
-                <button class="btn1" onclick="getLessonLevel(3)">רמה 3 <br> דקדוק</button>
-                <button class="btn1" onclick="getLessonLevel(2)"> רמה 2 <br> אוצר מילים</button>
-                <button class="btn1" onclick="getLessonLevel(1)">רמה 1 <br> קריאה    </button>
+                <button class="btn1" onclick="getLessonLevel(3) " id="level_3_btnID">רמה 3 <br> דקדוק</button>
+                <button class="btn1" onclick="getLessonLevel(2)" id="level_2_btnID"> רמה 2 <br> אוצר מילים</button>
+                <button class="btn1" onclick="getLessonLevel(1)" id="level_1_btnID">רמה 1 <br> קריאה    </button>
             </div>
             <div class="table" id="lesson_input">
 
             </div>
-            <div class="level">
-                <button class="btn1" onclick="updateBtn(againBtn)"> חזרה </button>
-                <button class="btn1" onclick="updateBtn(addQWordBtn)"> שאלות נוספות </button>
-                <button class="btn1" onclick="updateBtn(testWordBtn)"> בחן את עצמך</button>
-                <button class="btn1" onclick="updateBtn(exerciseBtn)">   תירגול</button>
-                <button class="btn1" onclick="updateBtn(learnWordBtn)"> למד אותיות/מילים </button>
+           <div class="level">
+                <button class="btn1" onclick="updateBtn(againBtn) "    id="againBtnID"    > חזרה </button>
+                <button class="btn1" onclick="updateBtn(addQWordBtn)"  id="addQWordBtnID" > שאלות נוספות </button>
+                <button class="btn1" onclick="updateBtn(testWordBtn)"  id="testWordBtnID" > בחן את עצמך</button>
+                <button class="btn1" onclick="updateBtn(exerciseBtn)"  id="exerciseBtnID" >   תירגול</button>
+                <button class="btn1" onclick="updateBtn(learnWordBtn)" id="learnWordBtnID"> למד אותיות/מילים </button>
             </div>
 
         </div>
@@ -179,37 +179,7 @@
   html_code3+="</nav>"
 
   document.getElementById("lesson_input").innerHTML=html_code1;
+  getLessonLevel(1);
 
- function getLessonLevel(level)
- {
-     if(level == 1)
-     {
-        document.getElementById("lesson_input").innerHTML=html_code1;
-     }
-     if(level == 2)
-     {
-        document.getElementById("lesson_input").innerHTML=html_code2;
-     }
-     if(level == 3)
-     {
-        document.getElementById("lesson_input").innerHTML=html_code3;
-     }
- }
-
-     function lessonBtnFunc(list, lesson)
-    {
-        lessonToLearnLesson = lesson;
-        lessonToLearnArray = list;
-
-    }
-
-    function updateBtn(btn)
-    {
-        lastBtn = btn;
-        if(btn == learnWordBtn)
-        {
-            window.location.href="study.php";
-        }
-    }
 </script>
 </html>
