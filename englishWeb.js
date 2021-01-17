@@ -9,6 +9,9 @@ var LEVEL_LESSON_3 = "3"
 
 var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
 var exerciseWordList = [" גֵ'י "," אֶס "," סִי ","אֶן "," פִּי "," דִי "," וּאַי "," יוּ "," אַר "," קְיוּ "," זֶד "," בּי "," גִ'י "," אַי "," אֶם "," אֶף "," 'אֵיץ "," אֵי "," קֵי "," טִי "," בִי "," אֶל "," אֶקְס "," אוֹוּ "," דַבְּליוּ "," אִי "]
+
+var g_level_lesson = LEVEL_LESSON_1;
+var g_lastBtn_lesson = "learnWordBtn"
 function changeAudioModeBtn()
 {
     var audio_m = localStorage.getItem('AudioMode')
@@ -64,16 +67,22 @@ function playBtn()
 //lesson page
 function helperForBegginsPage()
 {
-    window.open("http://clickenglish.unaux.com/short_help_English4Beginners.html", "_blank");
+    window.open("http://clickenglish.unaux.com/short_help_English4Beginners.html", "_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=200,width=600,height=1000");
 }
 
 function fullInstructions()
 {
-    window.open("http://clickenglish.unaux.com/UG.pdf", "_blank");
+    window.open("http://clickenglish.unaux.com/UG.pdf", "_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=200,width=600,height=1000");
+}
+
+function showGrads()
+{
+    window.open("http://clickenglish.unaux.com/grads_page.php", "_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=200,width=600,height=1000");
 }
 
 function getLessonLevel(level)
 {
+    g_level_lesson = level;
      if(level == 1)
      {
         document.getElementById("level_1_btnID").style.backgroundColor =  "#bb99ff";
@@ -116,10 +125,20 @@ function getLessonLevel(level)
 
     }
 
-    function updateBtn(btn)
+    function updateBtn(btnName)
     {
-        lastBtn = btn;
-        if(btn == learnWordBtn)
+        // againBtn
+        // addQWordBtn
+        // testWordBtn
+        // exerciseBtn
+        // learnWordBtn
+        g_lastBtn_lesson = btn;
+        if(btnName == "learnWordBtn")
+        {
+            window.location.href="study.php";
+        }
+
+        if(btnName == "exerciseBtn")
         {
             window.location.href="study.php";
         }
@@ -137,6 +156,7 @@ function relevantBtn(pageName)
 {
     // var
 }
+
 
 function loadExercisePage()
 {

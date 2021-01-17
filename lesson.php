@@ -99,7 +99,7 @@
         <div class="top">
             <div class="left">
                 <button class="btn1" id="testBtnID"> מבחן לרמה   </button>
-                <button class="btn1" id="gradsBtnID"> ציונים  </button>
+                <button class="btn1" id="gradsBtnID"  onclick="showGrads()"> ציונים  </button>
                 <button class="btn1" onclick="fullInstructions()"> הוראות מלאות  </button>
                 <button class="btn1" onclick="helperForBegginsPage()"> עזרה מקוצרת  </button>
             </div>
@@ -130,11 +130,11 @@
 
             </div>
            <div class="level">
-                <button class="btn1" onclick="updateBtn(againBtn) "    id="againBtnID"    > חזרה </button>
-                <button class="btn1" onclick="updateBtn(addQWordBtn)"  id="addQWordBtnID" > שאלות נוספות </button>
-                <button class="btn1" onclick="updateBtn(testWordBtn)"  id="testWordBtnID" > בחן את עצמך</button>
-                <button class="btn1" onclick="updateBtn(exerciseBtn)"  id="exerciseBtnID" >   תירגול</button>
-                <button class="btn1" onclick="updateBtn(learnWordBtn)" id="learnWordBtnID"> למד אותיות/מילים </button>
+                <button class="btn1" onclick="updateBtn('againBtn    ') " id="againBtnID"    > חזרה </button>
+                <button class="btn1" onclick="updateBtn('addQWordBtn ')"  id="addQWordBtnID" > שאלות נוספות </button>
+                <button class="btn1" onclick="updateBtn('testWordBtn ')"  id="testWordBtnID" > בחן את עצמך</button>
+                <button class="btn1" onclick="updateBtn('exerciseBtn ')"  id="exerciseBtnID" >   תירגול</button>
+                <button class="btn1" onclick="updateBtn('learnWordBtn')" id="learnWordBtnID"> למד אותיות/מילים </button>
             </div>
 
         </div>
