@@ -102,7 +102,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 .wordC
 {
 	border: solid;
-	border-color: blue;
+	border-color: #ff99dd;
     display: inline-block;
     width: 15%;
     height: 2.3rem;
@@ -118,4 +118,138 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 {
 	padding-top: 3rem;
 	margin-left: 25px;
+}
+
+.helpersBtnLsn
+{
+  background-repeat: no-repeat;
+  background-size:3rem 3rem;
+  width: 3rem;
+  height:  3rem;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  margin-right: 1rem;
+
+}
+.wrppHelpBtn
+{
+	float: right;
+	padding-right: 8rem;
+}
+
+.insBtnClass
+{
+	background-color: #ff99dd;
+	font-size: 1.1rem;
+    display: /*inline*/-block;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
+
+.instWrppC
+{
+	margin-top: 3rem;
+	width: 100%;
+	float: right;
+}
+
+#infoBtnID
+{
+	width: 20%;
+	float: right;
+}
+
+#gradsWrprrClass
+{
+	float: top;
+}
+#labelsC1{
+	font-size: 1.5rem;
+	text-align: center;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	direction: rtl;
+	width: 100%;
+}
+
+#labelsCText{
+	text-align: center;
+	width: 100%;
+	font-size: 2rem;
+}
+
+#infoExerLbleID{
+	direction: rtl;
+	padding-right: 4rem;
+	padding-top: 2rem;
+	font-size: 1rem;
+	width: 100%;
+	float: right;
+
+}
+#wrrperContentID
+{
+	margin-right: 2rem;
+	box-sizing: border-box;
+	float: right;
+	width: 76.5%;
+	text-align: right;
+}
+#exerciseContainerID
+{
+	width: 100%;
+}
+#insLabelID
+{
+	direction: rtl;
+	padding-right: 4rem;
+	padding-top: 1rem;
+	font-size: 1.5rem;
+	width: 100%;
+	float: right;
+	text-align: right;
+}
+
+.listWordsID
+{
+	margin-top: 0.5rem;
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin-right: 4rem;
+	height:
+}
+.wordInListExeQC
+{
+	float: right;
+	width: 5%;
+	height: 2rem;
+	text-align: center;
+	background-color: #ffccff;
+	font-size: 1.5rem;
+}
+.wordInListExeAC
+{
+	margin-right: 1rem;
+	float: right;
+	font-size: 1.5rem;
+	width: 5%;
+	height: 2rem;
+	text-align: center;
+	background-color: #99ccff;
+}
+
+.wrrpListID
+{
+	/*margin-right: 4rem;*/
+	background-color: white;
+	height: 20rem;
+	overflow:hidden;
+	width:100%;
+	overflow-y:scroll;
+}
 }

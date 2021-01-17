@@ -20,6 +20,7 @@
         <div class="top">
             <div class="right">
                 <div class="row1">
+                  <label class="label"> אנגלית <?php echo $english_to;?></label>
                     <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                     <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
                     <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
@@ -28,27 +29,67 @@
                     <a onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
               </div>
+
         </div>
         <div id="wordsWrpprID">
+          <!-- words or chars -->
 
         </div>
         <div id="infoBtnID">
-          <div>
-            <button id="savePointsBtnID" title="שמור ">btn 1 </button>
-            <button id="ansBtnID" title="לחץ כאן אם אתה לא מוצא את המילה ">btn 2 </button>
-            <button id="audioText" title="לחץ על כפתור לשמיעת הטקסט ">btn 3 </button>
+          <div class="wrppHelpBtn">
+            <button id="savePointsBtnID" class="helpersBtnLsn" title="שמור " style="background-image: url('iconsave.png');"></button>
+            <button id="audioText"  class="helpersBtnLsn" title="לחץ על כפתור לשמיעת הטקסט " style="background-image: url('iconplay.png');"></button>
+            <button id="ansBtnID" class="helpersBtnLsn" title="לחץ כאן אם אתה לא מוצא את המילה " style="background-image: url('icon_question.png');"> </button>
           </div>
 
-            <button>btn 2</button>
-            <button>btn 2</button>
-            <button>btn 2</button>
-            <button>btn 2</button>
-            <label>הציון שלך הוא : 0</label>
-        </div>
-        <div id="InfoTestID">
-          <label>שים לב באפשרותכם לראות את התרגום של כל מילה בכל זמן על ידי לחיצה על  הכפתור הימני של העכבר</label>
-          <div id="exerciseContainerID">
+          <div class="instWrppC">
+          <button class="insBtnClass" id="">אוצר  מילים </button>
+          <button class="insBtnClass" id="">הוראות </button>
+          <button class="insBtnClass" id="">סימני ניקוד </button>
+          <button class="insBtnClass" id="">הסבר נוסף </button>
+          </div>
+          <div id="gradsWrprrClass">
+            <label id="labelsC1">הציון שלך הוא : </label>
+            <label id="labelsCText" id="dynamicGradsID">5</label>
+          </div>
 
+        </div>
+        <div id="wrrperContentID">
+          <label id="infoExerLbleID">שים לב באפשרותכם לראות את התרגום של כל מילה בכל זמן על ידי לחיצה על  הכפתור הימני של העכבר</label>
+          <div   id="insLabelID"> התאם את האות עם  שמה</div>
+          <div class="wrrpListID" id="ListContentID">
+            <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+            <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+            <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+            <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+             <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+             <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+             <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
+             <div class="listWordsID">
+              <div class="wordInListExeQC"> ג'י </div>
+              <div class="wordInListExeAC"> J </div>
+            </div>
           </div>
         </div>
 </body>

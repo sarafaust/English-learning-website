@@ -8,7 +8,7 @@ var LEVEL_LESSON_2 = "1"
 var LEVEL_LESSON_3 = "3"
 
 var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
-
+var exerciseWordList = [" גֵ'י "," אֶס "," סִי ","אֶן "," פִּי "," דִי "," וּאַי "," יוּ "," אַר "," קְיוּ "," זֶד "," בּי "," גִ'י "," אַי "," אֶם "," אֶף "," 'אֵיץ "," אֵי "," קֵי "," טִי "," בִי "," אֶל "," אֶקְס "," אוֹוּ "," דַבְּליוּ "," אִי "]
 function changeAudioModeBtn()
 {
     var audio_m = localStorage.getItem('AudioMode')
