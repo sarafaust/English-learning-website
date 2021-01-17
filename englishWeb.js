@@ -7,6 +7,8 @@ var LEVEL_LESSON_1 = "1"
 var LEVEL_LESSON_2 = "1"
 var LEVEL_LESSON_3 = "3"
 
+var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
+
 function changeAudioModeBtn()
 {
     var audio_m = localStorage.getItem('AudioMode')
@@ -134,4 +136,13 @@ function grammerHelper()
 function relevantBtn(pageName)
 {
     // var
+}
+
+function loadExercisePage()
+{
+	html_code = "";
+	for (i = 0; i < wordsList.length; i++) {
+        html_code += "<div  class='wordC' onclick='pressWordExe("+i+")' value="+i+">"+wordsList[i]+"</div>";
+      }
+	document.getElementById("wordsWrpprID").innerHTML=html_code;
 }
