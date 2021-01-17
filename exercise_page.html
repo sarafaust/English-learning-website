@@ -1,0 +1,56 @@
+<!-- grads page -->
+<html style="height:100%">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="englishWeb.css">
+
+  <title>English Demo</title>
+</head>
+
+<body style="margin:0; height:100%; max-width:100%" onload="loadExercisePage()">
+<script src="englishWeb.js"></script>
+
+    <div class="container">
+        <div class="top">
+            <div class="right">
+                <div class="row1">
+                    <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                    <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                    <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                    <a onclick="settingBtn()" title="הגדות"><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
+                    <a onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                </div>
+              </div>
+        </div>
+        <div id="wordsWrpprID">
+
+        </div>
+        <div id="infoBtnID">
+          <div>
+            <button id="savePointsBtnID" title="שמור ">btn 1 </button>
+            <button id="ansBtnID" title="לחץ כאן אם אתה לא מוצא את המילה ">btn 2 </button>
+            <button id="audioText" title="לחץ על כפתור לשמיעת הטקסט ">btn 3 </button>
+          </div>
+
+            <button>btn 2</button>
+            <button>btn 2</button>
+            <button>btn 2</button>
+            <button>btn 2</button>
+            <label>הציון שלך הוא : 0</label>
+        </div>
+        <div id="InfoTestID">
+          <label>שים לב באפשרותכם לראות את התרגום של כל מילה בכל זמן על ידי לחיצה על  הכפתור הימני של העכבר</label>
+          <div id="exerciseContainerID">
+
+          </div>
+        </div>
+</body>
+
+</html>
