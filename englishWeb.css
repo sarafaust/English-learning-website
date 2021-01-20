@@ -252,4 +252,141 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 	width:100%;
 	overflow-y:scroll;
 }
+
+.rightColsC
+{
+	margin-top: 4rem;
+	margin-right: 2rem;
+	float: right;
+	width:25%;
+	/*background-color: red;*/
+}
+
+#dictWrrprID
+{
+	width: 95%;
+	padding: 2%;
+	margin: 0;
+	border: 4;
+	margin-left: 0.8rem;
+	border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+
+#legendID
+{
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+	padding-left:  0.5rem;
+	margin-left: 90%;
+}
+.DictBtnC
+{
+	float: right;
+	width: 80%;
+	margin-right: 2.5rem;
+	margin-top: 0.5rem;
+}
+
+.DictTxtC
+{
+	width: 100%;
+    display: flex;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+	margin-top: 1.5rem;
+}
+
+#grammerhlpID
+{
+	float: right;
+	width: 95%;
+	margin-right: 0.7rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	background-color: #ff99ff;
+}
+
+.middleColsC
+{
+	margin-top: 5rem;
+	margin-left: 3rem;
+	width: 68%;
+}
+
+#explLabelID
+{
+	width: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+	background-color: white;
+}
+
+.questionWrrprC
+{
+	margin-top:  1rem;
+	border-color: gray;
+	border-style: groove;
+	height: 40rem;
+	overflow:hidden;
+	width:100%;
+	overflow-y:scroll;
+}
+
+.addQC
+{
+	float: right;
+	width: 98%;
+	margin:1rem;
+	background-color: #ECF0F1 ;
+	height: 7rem;
+}
+
+#checkAnsID
+{
+	margin-top: 1rem;
+	width: 100%;
+    display: flex;
+	justify-content: center;
+	background-color: #ff99ff;
+    align-items: center;
+}
+.wrppQC
+{
+	width: 100%;
+}
+
+.numQC
+{
+	float: left;
+	font-size: 1rem;
+	width: 3%;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+.inputAnsTxtC{
+	margin-top: .5rem;
+	width: 95%;
+	margin-left:  .5rem;
+	border-color: #00ccff;
+}
+.wrrpBtnC{
+	width: 100%;
+	margin-top: 0.5rem;
+}
+.btnAnsC
+{
+	width: 15%;
+	margin: 0.5rem;
 }
