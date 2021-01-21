@@ -135,7 +135,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 .wrppHelpBtn
 {
 	float: right;
-	padding-right: 8rem;
+	padding-right: 1rem;
 }
 
 .insBtnClass
@@ -179,7 +179,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 #labelsCText{
 	text-align: center;
 	width: 100%;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 #infoExerLbleID{
@@ -196,7 +196,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 	margin-right: 2rem;
 	box-sizing: border-box;
 	float: right;
-	width: 76.5%;
+	width: 94%;
 	text-align: right;
 }
 #exerciseContainerID
@@ -206,9 +206,9 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 #insLabelID
 {
 	direction: rtl;
-	padding-right: 4rem;
+	padding-right: 1rem;
 	padding-top: 1rem;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	width: 100%;
 	float: right;
 	text-align: right;
@@ -247,7 +247,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 {
 	/*margin-right: 4rem;*/
 	background-color: white;
-	height: 20rem;
+	height: 26rem;
 	overflow:hidden;
 	width:100%;
 	overflow-y:scroll;

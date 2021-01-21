@@ -1,0 +1,14 @@
+.serviceBtn{
+    height: 4rem;
+    margin-left: 1rem;
+}
+.serviceBtn:hover {
+transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.textTitle
+{
+	margin-top: 1rem;
+	font-size: 2rem;
+	margin-right: 4rem;
+}
