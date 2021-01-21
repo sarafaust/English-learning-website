@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html style="height:100%">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="practice.css">
+  <title>English Demo</title>
+</head>
+
+<body style="margin:0; height:100%; max-width:100%">
+    <script src="practice.js"></script>
+    <div class="container">
+        <div class="top">
+            <div class="textTitle">אוצר מילים </div>
+            <div class="row1">
+                <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
+                <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
+                <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
+                <a onclick="settingBtn()" title="הגדות"><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
+                <a onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                <a onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+            </div>
+        </div>
+        <div class="wrapperVacC">
+		<style type="text/css">
+		.tftable {text-align: right;font-size:1.1rem;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse; }
+		.tftable th {text-align: right;font-size:1.1rem;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+		.tftable tr {text-align: right;background-color:#d4e3e5;}
+		.tftable td {text-align: right;font-size:1.1rem;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+		.tftable tr:hover {background-color:#ffffff;}
+		</style>
+
+		<table class="tftable" border="1">
+		<tr><th>אנגלית</th><th>עברית</th><th>תעתיק </th><th>חלק הדיבור</th></tr>
+
+		<tr><td> A </td><td> אֵי  </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td> B </td><td> בּי    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td> C </td><td> סִי    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  D </td><td> דִי    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  E </td><td> אִי    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  F </td><td> אֶף    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  G </td><td> גִ'י    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  H </td><td> 'אֵיץ    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  I </td><td> אַי    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  J </td><td> גֵ'י    </td><td>  NO</td><td>    סוג אחר</td></tr>
+		<tr><td>  K </td><td> קֵי   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  L </td><td> אֶל   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  M </td><td> אֶם   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  N </td><td> אֶן   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  O </td><td> אוֹוּ   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  P </td><td> פִּי   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  Q </td><td> קְיוּ   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  R </td><td> אַר   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  S </td><td> אֶס   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  T </td><td> טִי   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  U </td><td> יוּ   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td> V </td><td> בִי   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td> W </td><td> דַבְּליוּ   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  X </td><td> אֶקְס   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  Y </td><td> וּאַי   </td><td>NO</td><td> סוג אחר</td></tr>
+		<tr><td>  Z </td><td> זֶד   </td><td>NO</td><td> סוג אחר</td></tr>
+		</table>
+
+
+</div>
+    </div>
+</body>
+</html>
