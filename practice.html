@@ -45,12 +45,12 @@
                 <div class="wrppHelpBtn">
                     <button id="savePointsBtnID" class="helpersBtnLsn" title="שמור " style="background-image: url('iconsave.png');"></button>
                     <button id="audioText"  class="helpersBtnLsn" title="לחץ על כפתור לשמיעת הטקסט " style="background-image: url('iconplay.png');"></button>
-                    <button id="ansBtnID" class="helpersBtnLsn" title="לחץ כאן אם אתה לא מוצא את המילה " style="background-image: url('icon_question.png');"> </button>
+                    <button id="ansBtnID" class="helpersBtnLsn" onclick="showAns()" title="לחץ כאן אם אתה לא מוצא את המילה " style="background-image: url('icon_question.png');"> </button>
                 </div>
-                <button class="btn1" id="collecWordsBtnID"> אוצר מילים  </button>
-                <button class="btn1" id="InstBtnID" > הוראות  </button>
-                <button class="btn1" id="grammerSignsBtnID" > סימני ניקוד  </button>
-                <button class="btn1" id="anotherExplnationBtnID" > הסבר נוסף  </button>
+                <button class="btn1" id="collecWordsBtnID" onclick="vacableFun()"> אוצר מילים  </button>
+                <button class="btn1" id="InstBtnID" onclick="InsBtnFun()"> הוראות  </button>
+                <button class="btn1" id="grammerSignsBtnID" onclick="grammerSignsBtnFun()"> סימני ניקוד  </button>
+                <button class="btn1" id="anotherExplnationBtnID" onclick="anotherExplnationBtnFunc()"> הסבר נוסף  </button>
                 <div id="gradsWrprrClass">
                     <label id="labelsC1">הציון שלך הוא : </label>
                     <label id="labelsCText" id="dynamicGradsID">5</label>

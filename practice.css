@@ -167,3 +167,10 @@
     margin-right: 4rem;
     height:
 }
+
+.wrapperVacC
+{
+    margin-top: 2rem;
+    height:50rem;
+    overflow-y:scroll;
+}
