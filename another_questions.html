@@ -9,12 +9,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="lesson.css">
   <link rel="stylesheet" href="englishWeb.css">
+  <link rel="stylesheet" href="another_questions.css">
 
   <title>English Demo</title>
 </head>
 
-<body style="margin:0; height:100%; max-width:100%" >
+<body style="margin:0; height:100%; max-width:100%" onload="loadQues()">
 <script src="englishWeb.js"></script>
+<script src="defines.js"></script>
+<script src="another_questions.js"></script>
 
     <div class="container">
         <div class="top">
@@ -47,29 +50,23 @@
           <div class="middleColsC">
 
             <div id="explLabelID"> הנה כמה אותיות קשות.. בחר את השם המתאים .</div>
-            <div class="questionWrrprC">
-                <div class="addQC">
-                  <div class="wrppQC">
-                    <div class="numQC">1)</div>
-                    <input type="text" class="inputAnsTxtC">
-                  </div>
-                  <div class="wrrpBtnC">
-                    <button class="btnAnsC">aa</button>
-                    <button class="btnAnsC">aa</button>
-                    <button class="btnAnsC">aa</button>
-                    <button class="btnAnsC">aa</button>
-                    <button class="btnAnsC">aa</button>
-                    <button class="btnAnsC">aa</button>
-                  </div>
-                </div>
-                <div class="addQC"></div>
-                <div class="addQC"></div>
-                <div class="addQC"></div>
-                <div class="addQC"></div>
-                <div class="addQC"></div>
+            <div class="questionWrrprC" id="questionWrrprID">
+              <!-- insert dynamic code -->
             </div>
-            <button id="checkAnsID">בדוק תשובות </button>
+            <button id="checkAnsID" onclick="checkAllAns()">בדוק תשובות </button>
           </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span id="closeSpanID">&times;</span>
+        <div id="spanWrrpr">        <p> הציון שלך הוא: </p>
+        <p id="textPointsID"></p></div>
+
+      </div>
+
     </div>
 </body>
 

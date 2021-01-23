@@ -308,7 +308,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 	margin-right: 0.7rem;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
-	background-color: #ff99ff;
+	background-color: rgb(114, 142, 235);
 }
 
 .middleColsC
@@ -320,6 +320,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 
 #explLabelID
 {
+	direction: rtl;
 	width: 100%;
     display: flex;
     font-size: 1.5rem;
@@ -351,11 +352,12 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 
 #checkAnsID
 {
+	height: 3rem;
 	margin-top: 1rem;
 	width: 100%;
     display: flex;
 	justify-content: center;
-	background-color: #ff99ff;
+	background-color: rgb(114, 142, 235);
     align-items: center;
 }
 .wrppQC
@@ -379,7 +381,7 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 	margin-top: .5rem;
 	width: 95%;
 	margin-left:  .5rem;
-	border-color: #00ccff;
+	border-color:rgb(114, 142, 235);
 }
 .wrrpBtnC{
 	width: 100%;
