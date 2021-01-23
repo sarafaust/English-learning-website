@@ -2,6 +2,10 @@ var imported = document.createElement('script');
 imported.src = 'defines.js';
 document.head.appendChild(imported);
 
+var imported = document.createElement('script');
+imported.src = 'dictionary.js';
+document.head.appendChild(imported);
+
 //another_question - page
 var listQuestion = ["Q", "W", "H", "G", "Y" , "J"]
 var listAnsNum = ["2", "1", "3", "4", "0" , "5"]
@@ -22,6 +26,7 @@ function cleanData ()
 }
 function loadQues()
 {
+	createDict();
 	htmlq = ""
 	for (var i = 0; i < listQuestion.length; i++) {
 		numQ = i+1
