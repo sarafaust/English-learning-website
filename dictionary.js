@@ -1,6 +1,3 @@
-inputDictArray =["a"]
-inputDictOtherFormatArray =["an"]
-hebDictArr = ["תנועה, מופיעה באנגלית לפני שם עצם (אחד) לא מיודע. "]
 var GLOBAL_DICT = {};
 
 function createDict()

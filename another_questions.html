@@ -19,6 +19,30 @@
 <script src="defines.js"></script>
 <script src="another_questions.js"></script>
 
+<?php
+    $xml=simplexml_load_file("XmlDictionary.xml");
+
+    $englishWords = $xml->xpath('//WORDS/word');
+    //run over all word in Dict
+    $englishWordsList = "";
+    $englishWordsOtherFormatList = "";
+    $hebWordTransList = "";
+    $ArbWordTransList = "";
+
+    foreach($englishWords as $item) {
+        $englishWordsList=$englishWordsList.(string)$item->EnglishWord."@@@";
+        if($item->OtherForms)
+        {
+            $englishWordsOtherFormatList=$englishWordsOtherFormatList.(string)$item->OtherForms."@@@";
+        }
+        else
+        {
+            $englishWordsOtherFormatList=$englishWordsOtherFormatList.(string)"-"."@@@";
+        }
+        $hebWordTransList=$hebWordTransList.(string)$item->Heb."@@@";
+        $ArbWordTransList=$ArbWordTransList.(string)$item->Arb."@@@";
+    }
+?>
     <div class="container">
         <div class="top">
             <div class="right">
@@ -69,5 +93,19 @@
 
     </div>
 </body>
+
+<script type="text/javascript">
+
+englishWordsList = <?php echo json_encode($englishWordsList); ?>;
+englishWordsOtherFormatList = <?php echo json_encode($englishWordsOtherFormatList); ?>;
+hebWordTransList = <?php echo json_encode($hebWordTransList); ?>;
+ArbWordTransList = <?php echo json_encode($ArbWordTransList); ?>;
+
+inputDictArray = englishWordsList.split("@@@");
+inputDictOtherFormatArray = englishWordsOtherFormatList.split("@@@");
+hebDictArr = hebWordTransList.split("@@@");
+ArbDictArr = ArbWordTransList.split("@@@");
+
+</script>
 
 </html>
