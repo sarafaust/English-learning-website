@@ -86,8 +86,8 @@ function getLessonLevel(level)
      if(level == 1)
      {
         document.getElementById("level_1_btnID").style.backgroundColor =  "#bb99ff";
-        objectBtn = document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        objectBtn = document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code1;
         document.getElementById("testBtnID").style.display = "none";
         document.getElementById("testWordBtnID").style.display = "none";
@@ -96,8 +96,8 @@ function getLessonLevel(level)
      if(level == 2)
      {
         document.getElementById("level_2_btnID").style.backgroundColor =  "#bb99ff";
-        objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        objectBtn = document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code2;
         document.getElementById("testBtnID").style.display = "block";
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  2";
@@ -107,8 +107,8 @@ function getLessonLevel(level)
      if(level == 3)
      {
         document.getElementById("level_3_btnID").style.backgroundColor =  "#bb99ff";
-        objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        objectBtn = document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code3;
         document.getElementById("testBtnID").style.display = "block";
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  3";
