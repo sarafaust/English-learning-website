@@ -92,7 +92,32 @@
     }
 
 ?>
+<script src="dictionary.js"></script>
 
+<?php
+    $xml=simplexml_load_file("XmlDictionary.xml");
+
+    $englishWords = $xml->xpath('//WORDS/word');
+    //run over all word in Dict
+    $englishWordsList = "";
+    $englishWordsOtherFormatList = "";
+    $hebWordTransList = "";
+    $ArbWordTransList = "";
+
+    foreach($englishWords as $item) {
+        $englishWordsList=$englishWordsList.(string)$item->EnglishWord."@@@";
+        if($item->OtherForms)
+        {
+            $englishWordsOtherFormatList=$englishWordsOtherFormatList.(string)$item->OtherForms."@@@";
+        }
+        else
+        {
+            $englishWordsOtherFormatList=$englishWordsOtherFormatList.(string)"-"."@@@";
+        }
+        $hebWordTransList=$hebWordTransList.(string)$item->Heb."@@@";
+        $ArbWordTransList=$ArbWordTransList.(string)$item->Arb."@@@";
+    }
+?>
 
 
     <div class="container">
@@ -130,10 +155,10 @@
 
             </div>
            <div class="level">
-                <button class="btn1" onclick="updateBtn('againBtn    ') " id="againBtnID"    > חזרה </button>
-                <button class="btn1" onclick="updateBtn('addQWordBtn ')"  id="addQWordBtnID" > שאלות נוספות </button>
-                <button class="btn1" onclick="updateBtn('testWordBtn ')"  id="testWordBtnID" > בחן את עצמך</button>
-                <button class="btn1" onclick="updateBtn('exerciseBtn ')"  id="exerciseBtnID" >   תירגול</button>
+                <button class="btn1" onclick="updateBtn('againBtn') " id="againBtnID"    > חזרה </button>
+                <button class="btn1" onclick="updateBtn('addQWordBtn')"  id="addQWordBtnID" > שאלות נוספות </button>
+                <button class="btn1" onclick="updateBtn('testWordBtn')"  id="testWordBtnID" > בחן את עצמך</button>
+                <button class="btn1" onclick="updateBtn('exerciseBtn')"  id="exerciseBtnID" >   תירגול</button>
                 <button class="btn1" onclick="updateBtn('learnWordBtn')" id="learnWordBtnID"> למד אותיות/מילים </button>
             </div>
 
@@ -181,5 +206,21 @@
   document.getElementById("lesson_input").innerHTML=html_code1;
   getLessonLevel(1);
 
+</script>
+
+<script type="text/javascript">
+
+englishWordsList = <?php echo json_encode($englishWordsList); ?>;
+englishWordsOtherFormatList = <?php echo json_encode($englishWordsOtherFormatList); ?>;
+hebWordTransList = <?php echo json_encode($hebWordTransList); ?>;
+ArbWordTransList = <?php echo json_encode($ArbWordTransList); ?>;
+
+inputDictArray = englishWordsList.split("@@@");
+inputDictOtherFormatArray = englishWordsOtherFormatList.split("@@@");
+hebDictArr = hebWordTransList.split("@@@");
+ArbDictArr = ArbWordTransList.split("@@@");
+
+createDict();
+saveDic();
 </script>
 </html>

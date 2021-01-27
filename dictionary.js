@@ -1,4 +1,9 @@
 var GLOBAL_DICT = {};
+var inputDictArray;
+
+var inputDictOtherFormatArray;
+var hebDictArr ;
+var ArbDictArr ;
 
 function createDict()
 {
@@ -12,4 +17,15 @@ function translateWord()
 {
 	inputText = document.getElementById("dictInTextID").value;
 	document.getElementById("dictTranID").innerHTML = GLOBAL_DICT[inputText]
+}
+
+function loadDic()
+{
+    GLOBAL_DICT = JSON.parse(localStorage.getItem('DictionaryData'));
+}
+
+function saveDic()
+{
+    alert("save");
+    localStorage.setItem('DictionaryData', JSON.stringify(GLOBAL_DICT));
 }

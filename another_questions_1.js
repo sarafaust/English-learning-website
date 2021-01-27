@@ -8,13 +8,12 @@ document.head.appendChild(imported);
 
 
 //``
-var listOppArr2 = ["True", "False"]
+var listOppArr = ["True", "False"]
 var g_flag_ans = false
 var userAns = []
 
-
-var questionTextArray = ["Father is a tall man","Father has blue shoes.","Father has a brown shirt.","Father has blue pants."];
-var correctNunArray = [0,1,1,0,];
+var questionTextArray;
+var correctNunArray;
 var modal
 
 function cleanData ()
@@ -26,14 +25,14 @@ function cleanData ()
 }
 function loadQues()
 {
-	// createDict();
+	loadDic();
 	htmlq = ""
 	for (var i = 0; i < questionTextArray.length -1 /*the prsing xml create +1 array*/; i++) {
 		numQ = i+1
 		htmlq+="<div class='addQC'><div class='wrppQC'><div class='numQC' id='numQ"+i+"ID'></div><input type='text' class='inputAnsTxtC' value='"+questionTextArray[i]+"' id='inputAns"+i+"ID'></div><div class='wrrpBtnC'>"
-		for (var j = 0; j < listOppArr2.length; j++)
+		for (var j = 0; j < listOppArr.length; j++)
 		{
-			htmlq+="<button class='btnAnsC' id='opt"+j+"Q"+i+"ID' onclick='updateAns("+i+","+j+")'>"+listOppArr2[j]+"</button>"
+			htmlq+="<button class='btnAnsC' id='opt"+j+"Q"+i+"ID' onclick='updateAns("+i+","+j+")'>"+listOppArr[j]+"</button>"
 		}
 		htmlq+="</div></div>"
 		userAns.push(-1)
@@ -72,7 +71,7 @@ function updateAns(num_q, num_op)
 	//for first answer
 	g_flag_ans = true
 
-	for (var i = 0; i < listOppArr2.length; i++) {
+	for (var i = 0; i < listOppArr.length; i++) {
 		id = "opt"+i.toString()+"Q"+num_q.toString()+"ID"
 		document.getElementById(id).style.backgroundColor ="white";
 	}
@@ -83,7 +82,6 @@ function updateAns(num_q, num_op)
 
 function checkAllAns()
 {
-	alert(userAns)
 	point_per_q = 100/userAns.length
 	points = 0
 	for (var i = 0; i < userAns.length; i++)

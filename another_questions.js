@@ -24,9 +24,10 @@ function cleanData ()
 		listQuestion[i] = -1
 	}
 }
+
 function loadQues()
 {
-	createDict();
+	loadDic();
 	htmlq = ""
 	for (var i = 0; i < listQuestion.length; i++) {
 		numQ = i+1
