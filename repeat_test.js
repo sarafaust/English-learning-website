@@ -53,6 +53,7 @@ function initWordQuestion()
 
 function showClueFunc()
 {
+	if(g_current_q > wordsList2.length) return;
 	currentW = wordsList2[g_current_q]
 	if(g_current_char+1 <= currentW.length)
 
@@ -68,6 +69,7 @@ function showClueFunc()
 
 function showAnsFunc()
 {
+	if(g_current_q > wordsList2.length) return;
 	for (var i = g_current_char; i < wordsList2[g_current_q].length; i++) {
 		showClueFunc()
 	}
