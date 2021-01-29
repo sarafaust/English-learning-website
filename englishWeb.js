@@ -4,7 +4,7 @@ var BEGINNERS = "beginners"
 var BUSINESS = "business"
 
 var LEVEL_LESSON_1 = "1"
-var LEVEL_LESSON_2 = "1"
+var LEVEL_LESSON_2 = "2"
 var LEVEL_LESSON_3 = "3"
 
 var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
@@ -12,6 +12,10 @@ var exerciseWordList = [" גֵ'י "," אֶס "," סִי ","אֶן "," פִּי "
 
 var g_level_lesson = LEVEL_LESSON_1;
 var g_lastBtn_lesson = "learnWordBtn"
+
+var g_lesson_in_level = 0
+var g_level_in_levels = 0
+
 function changeAudioModeBtn()
 {
     var audio_m = localStorage.getItem('AudioMode')
@@ -51,12 +55,17 @@ function settingBtn()
 
 function infoBtn()
 {
-    window.open("https://www.english4students.com/hebrew-home/guides", "_blank");
+    location.replace("https://www.english4students.com/hebrew-home/guides", "_blank");
 }
 
 function closeBtn()
 {
-   window.open("http://clickenglish.unaux.com/first_page.html", "_blank");
+    location.replace("http://clickenglish.unaux.com/first_page.html");
+}
+
+function closeBtn_from_study()
+{
+    window.location.href = "lesson.php";
 }
 
 function playBtn()
@@ -86,8 +95,8 @@ function getLessonLevel(level)
      if(level == 1)
      {
         document.getElementById("level_1_btnID").style.backgroundColor =  "#bb99ff";
-        document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code1;
         document.getElementById("testBtnID").style.display = "none";
         document.getElementById("testWordBtnID").style.display = "none";
@@ -96,8 +105,8 @@ function getLessonLevel(level)
      if(level == 2)
      {
         document.getElementById("level_2_btnID").style.backgroundColor =  "#bb99ff";
-        document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code2;
         document.getElementById("testBtnID").style.display = "block";
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  2";
@@ -107,8 +116,8 @@ function getLessonLevel(level)
      if(level == 3)
      {
         document.getElementById("level_3_btnID").style.backgroundColor =  "#bb99ff";
-        document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
-        document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
+        objectBtn = document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code3;
         document.getElementById("testBtnID").style.display = "block";
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  3";
@@ -120,9 +129,8 @@ function getLessonLevel(level)
 
      function lessonBtnFunc(list, lesson)
     {
-        lessonToLearnLesson = lesson;
-        lessonToLearnArray = list;
-
+        g_lesson_in_level = lesson;
+        g_level_in_levels = list;
     }
 
     function updateBtn(btnName)
@@ -132,15 +140,55 @@ function getLessonLevel(level)
         // testWordBtn
         // exerciseBtn
         // learnWordBtn
-        g_lastBtn_lesson = btn;
+        g_lastBtn_lesson = btnName;
         if(btnName == "learnWordBtn")
         {
-            window.location.href="study.php";
+            if(g_level_lesson == 1)
+            {
+                window.location.href="study.php";
+            }
+            else
+            {
+                window.location.href="study_2.php";
+            }
         }
 
         if(btnName == "exerciseBtn")
         {
-            window.location.href="study.php";
+            if(g_level_lesson == 1)
+            {
+                window.location.href="practice.php";
+            }
+            else
+            {
+                window.location.href="practice_2.php";
+            }
+        }
+
+        if(btnName == "addQWordBtn")
+        {
+            if(g_level_lesson == 1)
+            {
+                window.location.href="another_questions.php";
+            }
+            else
+            {
+                window.location.href="another_questions_1.php";
+            }
+
+
+        }
+
+        if(btnName == "testWordBtn")
+        {
+            window.location.href="test_yourself.php";
+        }
+        if(btnName == "againBtn")
+        {
+            if(g_level_lesson == 2)
+            {
+                window.location.href="repeat_test.php";
+            }
         }
     }
 
@@ -160,9 +208,9 @@ function relevantBtn(pageName)
 
 function loadExercisePage()
 {
-	html_code = "";
-	for (i = 0; i < wordsList.length; i++) {
+  html_code = "";
+  for (i = 0; i < wordsList.length; i++) {
         html_code += "<div  class='wordC' onclick='pressWordExe("+i+")' value="+i+">"+wordsList[i]+"</div>";
       }
-	document.getElementById("wordsWrpprID").innerHTML=html_code;
+  document.getElementById("wordsWrpprID").innerHTML=html_code;
 }
