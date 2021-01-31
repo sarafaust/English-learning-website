@@ -29,6 +29,22 @@ function updateLevel(level)
     localStorage.setItem('CourseLevel', level); // students/bugginers/buisness
 }
 
+function updateCourseNum(num)
+{
+    localStorage.setItem('CourseNumber', num); // students/bugginers/buisness
+}
+
+function getLevel()
+{
+    return localStorage.getItem('CourseLevel'); // students/bugginers/buisness
+}
+
+function getCourseNum()
+{
+    return localStorage.getItem('CourseNumber'); // students/bugginers/buisness
+}
+
+
 function loadLessonPage()
 {
    level = localStorage.getItem('CourseLevel');
@@ -65,7 +81,11 @@ function closeBtn()
 
 function closeBtn_from_study()
 {
-    window.location.href = "lesson.php";
+    alert()
+    // window.location.href = "lesson.php";
+    // location.replace("http://clickenglish.unaux.com/lesson.php");
+    window.open("http://clickenglish.unaux.com/lesson.php","_self")
+    // location.replace("https://www.english4students.com/hebrew-home/guides", "_blank");
 }
 
 function playBtn()
@@ -91,6 +111,7 @@ function showGrads()
 
 function getLessonLevel(level)
 {
+    updateLevel(level);
     g_level_lesson = level;
      if(level == 1)
      {
@@ -129,6 +150,8 @@ function getLessonLevel(level)
 
      function lessonBtnFunc(list, lesson)
     {
+        updateCourseNum(lesson);
+        updateLevel(list);
         g_lesson_in_level = lesson;
         g_level_in_levels = list;
     }
@@ -148,8 +171,13 @@ function getLessonLevel(level)
                 window.location.href="study.php";
             }
             else
+            if(g_level_lesson == 2)
             {
                 window.location.href="study_2.php";
+            }
+            else
+            {
+                window.location.href="study_3.php";
             }
         }
 
