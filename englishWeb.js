@@ -76,7 +76,12 @@ function infoBtn()
 
 function closeBtn()
 {
-    location.replace("http://clickenglish.unaux.com/first_page.html");
+     if(history.length === 1){
+            window.location = "http://clickenglish.unaux.com/first_page.html"
+        } else {
+            history.back();
+        }
+    // location.replace("http://clickenglish.unaux.com/first_page.html");
 }
 
 function closeBtn_from_study()
@@ -111,6 +116,7 @@ function showGrads()
 
 function getLessonLevel(level)
 {
+    document.getElementById("labelTitleID").innerHTML = " הנך כעת ברמה "+level+ " בשיעור 1"
     updateLevel(level);
     g_level_lesson = level;
      if(level == 1)
@@ -166,19 +172,31 @@ function getLessonLevel(level)
         g_lastBtn_lesson = btnName;
         if(btnName == "learnWordBtn")
         {
-            if(g_level_lesson == 1)
-            {
-                window.location.href="study.php";
-            }
-            else
-            if(g_level_lesson == 2)
-            {
-                window.location.href="study_2.php";
-            }
-            else
-            {
-                window.location.href="study_3.php";
-            }
+            window.location.href="study_3.php";
+            var level = getLevel();
+            var lesson = parseInt(getCourseNum())+1;
+            var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
+            //save in cookies - in order to pass js value to php
+            document.cookie = "PATH="+path;
+
+            // if(g_level_lesson == 1)
+            // {
+            //     window.location.href="study.php";
+            // }
+            // else
+            // if(g_level_lesson == 2)
+            // {
+            //     window.location.href="study_2.php";
+            // }
+            // else
+            // {
+            //     window.location.href="study_3.php";
+            //     var level = getLevel();
+            //     var lesson = parseInt(getCourseNum())+1;
+            //     var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
+            //     //save in cookies - in order to pass js value to php
+            //     document.cookie = "PATH="+path;
+            // }
         }
 
         if(btnName == "exerciseBtn")

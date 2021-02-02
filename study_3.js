@@ -4,8 +4,8 @@
 
  function loadData()
  {
-
-    document.getElementById("progressBarID").max = data_length;
+     document.getElementById("titleID").innerHTML  = "  אוצר מילים לרמה "+level+ " לשיעור " + lesson
+     document.getElementById("progressBarID").max = data_length;
      var html_code = "<select size='5' name='' id='selectListID' class='form-control'>"+'\n';
       for (i = 0; i < data_length; i++) {
         html_code += "<option   onclick='pressWord("+i+")' value="+i+">"+englishWordsListArray[i]+"</option>";

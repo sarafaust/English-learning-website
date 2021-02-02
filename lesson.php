@@ -16,6 +16,10 @@
 <script src="englishWeb.js"></script>
 
 <?php
+    //for back page
+    header('Cache-Control: no cache'); //no cache
+    session_cache_limiter('private_no_expire'); // works
+
     session_start();
     include("config.php");
     if(!(isset ($_POST['new_user'] )) AND (!(isset($_POST['exist_user']))))
@@ -140,7 +144,7 @@
                 </div>
                 <div class="row2">
                     <label class="label2"> <?php echo $myusername;?> שלום</label>
-                    <label class="label2"> הינך כעת ברמה: 1, בשיעור: 1 </label>
+                    <label class="label2" id="labelTitleID"> הינך כעת ברמה: 1, בשיעור: 1 </label>
                 </div>
             </div>
         </div>

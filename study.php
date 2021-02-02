@@ -15,6 +15,7 @@
 <script type="text/javascript">
  var GO_FLAG = 99;
  var clickedWordIdx = 0 // is a defualt word
+ var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
  var wordsListHeb = ["אֵי","בּי","סִי", "דִי", "אִי", "אֶף", "גִ'י", "'אֵיץ","אַי", "גֵ'י", "קֵי", "אֶל", "אֶם", "אֶן", "אוֹוּ", "פִּי", "קְיוּ", "אַר", "אֶס", "טִי","יוּ","בִי","דַבְּליוּ", "אֶקְס","וּאַי", "זֶד"]
  var memHelp = [". A ראה בדמיונך איש שבמקום עיניים יש לו את האות  "
  , " .  B ראה בדמיונך ביס בצורת האות  "
@@ -92,7 +93,7 @@
                     <a href onclick="changeAudioMode()" title="שמע"><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                     <a href onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
                     <a href onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
-                    <a href onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
+                    <a href="lesson.php" onclick="closeBtn_from_study()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
                 </div>
             </div>
         </div>
@@ -176,8 +177,8 @@
 <tr><td>Row:19 Cell:1</td><td>Row:19 Cell:2</td><td>Row:19 Cell:3</td><td>Row:19 Cell:4</td></tr>
 </table>
 
-</div>
-</div>
+                         </div>
+                    </div>
 
 
 <script>
@@ -227,6 +228,4 @@ function closeID()
 }
 </script>
 </body>
-
-
 </html>

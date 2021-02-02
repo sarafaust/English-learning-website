@@ -13,17 +13,19 @@
 </head>
 <script src="englishWeb.js"></script>
 <script src="study_3.js"></script>
-<body style="margin:0; height:100%; max-width:100%" onload="loadData()">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 var level = getLevel();
-var lesson = getCourseNum();
+var lesson = parseInt(getCourseNum())+1;
+var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 </script>
 
 <?php
+$path  = $_COOKIE["PATH"];
 $level =  "<script>document.writeln(level);</script>";
 $lesson =  "<script>document.writeln(lesson);</script>";
-$xml=simplexml_load_file('English4Beginners/LEVEL'+$level+'/LESSON'+$lesson+'/TARGETW.xml');
+$xml = simplexml_load_file($path);
+
 $englishWords = $xml->xpath('//Words/word');
 
 $englishWordsList = "";
@@ -55,34 +57,36 @@ HebListTmp = HebList.split("@@@");
 EngInHebListTmp = EngInHebList.split("@@@");
 PartOfSpeechHebListTmp = PartOfSpeechHebList.split("@@@");
 
-var englishWordsListArray = [];
+englishWordsListArray = [];
 $.each(englishWordsListTmp, function(i, el){
     if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
 });
 
-var PartOfSpeechEngListArray = [];
+PartOfSpeechEngListArray = [];
 $.each(PartOfSpeechEngListTmp, function(i, el){
     if($.inArray(el, PartOfSpeechEngListArray) === -1) PartOfSpeechEngListArray.push(el);
 });
 
-var HebListArray = [];
+HebListArray = [];
 $.each(HebListTmp, function(i, el){
     if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
 });
 
-var EngInHebListArray = [];
+EngInHebListArray = [];
 $.each(EngInHebListTmp, function(i, el){
     if($.inArray(el, EngInHebListArray) === -1) EngInHebListArray.push(el);
 });
 
-var PartOfSpeechHebListArray = [];
+PartOfSpeechHebListArray = [];
 $.each(PartOfSpeechHebListTmp, function(i, el){
     if($.inArray(el, PartOfSpeechHebListArray) === -1) PartOfSpeechHebListArray.push(el);
 });
 
-var data_length= englishWordsListArray.length -1
+data_length= englishWordsListArray.length -1
 
 </script>
+
+<body style="margin:0; height:100%; max-width:100%" onload="loadData()">
 
 
    <div class="container">
@@ -102,7 +106,7 @@ var data_length= englishWordsListArray.length -1
         </div>
         <div class="bottom">
             <div class="colomn">
-                <label class="label"> אוצר מילים לרמה 1 שיעור 1</label>
+                <label class="label" id="titleID"> אוצר מילים לרמה 1 שיעור 1</label>
                 <br>
                 <progress value="1" max="26" class="prog" id="progressBarID"></progress>
                 <div class="left_colomn">
