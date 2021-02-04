@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row1">
                     <a onclick="languegeModeBtn()" title="שפות"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
-                    <a href="" onclick="infoBtn()" title="עזרה"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
+                    <a  onclick="infoBtn()" title="עזרה"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
         </div>
         <div class="header">
             <label>בחר לומדה</label>
@@ -33,7 +33,7 @@
                 <img src=".\assets\images\App\business.jpg" alt="business" class="img">
 
                 <form action="login.php" method="post">
-                <input class="btn1" type="submit" name="business" value="התחל">
+                <input class="btn1" type="submit" name="business" onclick="updateCategory('business')" value="התחל">
                 </form>
 
             </div>
@@ -43,7 +43,7 @@
                 <img src=".\assets\images\App\students.jpg" alt="students" class="img">
 
                 <form action="login.php" method="post">
-                <input class="btn1" type="submit" name="students" value="התחל">
+                <input class="btn1" type="submit" name="students"  onclick="updateCategory('students')" value="התחל">
                 </form>
             </div>
             <div class="course">
@@ -51,7 +51,7 @@
                 <label class="label">אנגלית למתחילים</label>
                 <img src=".\assets\images\App\Beginners.jpg" alt="beginners" class="img">
                 <form action="login.php" method="post">
-                <input class="btn1" type="submit" name="beginners" value="התחל">
+                <input class="btn1" type="submit" name="beginners" onclick="updateCategory('beginners')" value="התחל">
                 </form>
             </div>
         </div>

@@ -1,6 +1,11 @@
 var imported = document.createElement('script');
 imported.src = 'defines.js';
 document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = 'englishWeb.js';
+document.head.appendChild(imported);
+
 var g_currentWord = 0
 var g_last_ans = true
 var inCorrArr = [];
@@ -8,12 +13,14 @@ var CorrArr;
 var g_points = 0
 var g_points_arr = [4,3,2,1]
 var g_points_Helparr = [3,2,2,1]
+
 var g_ans_array = ["Father","brown", "has", "has",  "has", "and", "shirt", "also", "has","pants", "So","orange" ,"and"]
 var string_exercise = "This is #.  Father is a man.  Father is tall.  He is a tall man. Father is a tall man. Father has # shoes.   He # brown shoes. Father # an orange shirt. He # brown shoes # an orange shirt. This man is Father. Father is the tall man with brown shoes and an orange #. He # has blue pants. Father # blue #. # he has an # shirt, blue pants # brown shoes. "
 var wordsList2 = ["Father","brown", "has", "has", "has","has",  "and",  "and", "shirt", "also","pants", "So", "orange"]
 
 function updateDataPage()
 {
+    document.getElementById("textTitleID").innerHTML = " אנגלית ל " + getHebCategory() + " רמה  "+ getLevel() + " שיעור " + (parseInt(getCourseNum())+1)
 	document.getElementById("imageWID").style.backgroundImage = "url('picture1.JPG')";
 	var string_exercise_array = string_exercise.split("#");
 	// document.getElementById("imageWID").style.background  = "#f3f3f3 url('img_tree.png') no-repeat right top";;

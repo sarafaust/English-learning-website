@@ -24,6 +24,31 @@ function changeAudioModeBtn()
     localStorage.setItem('AudioMode', new_mode);
 }
 
+function updateCategory(category)
+{
+    localStorage.setItem('Category', category); // students/bugginers/buisness
+}
+
+function getCategory()
+{
+    return localStorage.getItem('Category'); // students/bugginers/buisness
+}
+
+function getHebCategory()
+{
+    category = localStorage.getItem('Category')
+    if(category == BEGINNERS)
+    {
+        return "למתחילים";
+    }
+    if(category == STUDENTS)
+    {
+        return "סטודנטים";
+    }
+    else
+    return "לאוניברסיטה"
+}
+
 function updateLevel(level)
 {
     localStorage.setItem('CourseLevel', level); // students/bugginers/buisness
@@ -170,14 +195,15 @@ function getLessonLevel(level)
         // exerciseBtn
         // learnWordBtn
         g_lastBtn_lesson = btnName;
+        var level = getLevel();
+        var lesson = parseInt(getCourseNum())+1;
+        var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/"
+        //save in cookies - in order to pass js value to php
+        document.cookie = "PATH="+path;
+
         if(btnName == "learnWordBtn")
         {
             window.location.href="study_3.php";
-            var level = getLevel();
-            var lesson = parseInt(getCourseNum())+1;
-            var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
-            //save in cookies - in order to pass js value to php
-            document.cookie = "PATH="+path;
 
             // if(g_level_lesson == 1)
             // {
