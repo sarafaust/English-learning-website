@@ -13,7 +13,7 @@
       html_code+="</select>"
       document.getElementById("WorldList").innerHTML=html_code;
       pressWord(0);
-
+      document.getElementsByTagName("option")[0].selected = true;
  }
 
  function pressWord(wordIdx)
@@ -24,6 +24,8 @@
         var e = document.getElementById("selectListID");
         wordIdx = e.options[e.selectedIndex].value;
     }
+    document.getElementsByTagName("option")[wordIdx].selected = true;
+
     wordIdx = Math.min(max_word, wordIdx);
     wordIdx = Math.max(0, wordIdx);
     var urlPath = 'English4Beginners/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.JPG'

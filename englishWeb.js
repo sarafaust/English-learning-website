@@ -31,6 +31,7 @@ function updateCategory(category)
 
 function getCategory()
 {
+    alert(localStorage.getItem('Category'))
     return localStorage.getItem('Category'); // students/bugginers/buisness
 }
 
