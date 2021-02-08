@@ -13,9 +13,54 @@
 
   <title>English Demo</title>
 </head>
-
-<body style="margin:0; height:100%; max-width:100%" onload="loadTestData()">
 <script src="test_yourself.js"></script>
+<script src="englishWeb.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+var level = getLevel();
+var lesson = parseInt(getCourseNum())+1;
+var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
+</script>
+
+<?php
+$path  = $_COOKIE["PATH"];
+$level =  "<script>document.writeln(level);</script>";
+$lesson =  "<script>document.writeln(lesson);</script>";
+$xml = simplexml_load_file($path."TARGETW.xml");
+
+$englishWords = $xml->xpath('//Words/word');
+
+$englishWordsList = "";
+$HebList = "";
+
+foreach($englishWords as $item) {
+    $englishWordsList=$englishWordsList.(string)$item->Eng."@@@";
+    $HebList=$HebList.(string)$item->Heb."@@@";
+}
+?>
+
+<script type="text/javascript">
+
+englishWordsList = <?php echo json_encode($englishWordsList); ?>;
+HebList = <?php echo json_encode($HebList); ?>;
+
+englishWordsListTmp = englishWordsList.split("@@@");
+HebListTmp = HebList.split("@@@");
+
+englishWordsListArray = [];
+$.each(englishWordsListTmp, function(i, el){
+    if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
+});
+
+HebListArray = [];
+$.each(HebListTmp, function(i, el){
+    if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
+});
+
+data_length= englishWordsListArray.length -1
+
+</script>
+<body style="margin:0; height:100%; max-width:100%" onload="loadTestData()">
 
 
     <div class="container">

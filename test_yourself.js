@@ -1,10 +1,16 @@
- var transWorld= ["אבא", "חום", "יש", "ו..." , "חולצה", "גם", "מכנסיים", "אז", "כתום"]
- var wordsList2 = ["Father","brown", "has",  "and", "shirt", "also","pants", "So", "orange"]
+ var imported = document.createElement('script');
+imported.src = 'englishWeb.js';
+document.head.appendChild(imported);
+
+var transWorld
+var wordsList2
 var g_current_q = 0
 function loadTestData()
 {
+    transWorld= HebListArray
+    wordsList2 = englishWordsListArray
 	num_option = 5
-	document.getElementById("prgressTestID").max = wordsList2.length;
+	document.getElementById("prgressTestID").max = data_length;
 	document.getElementById("englishWroldID").innerHTML =  wordsList2[0]
 	//create btns
 	html_code = ""
@@ -17,17 +23,17 @@ function loadTestData()
 
 function updateNextQ()
 {
-	if(g_current_q == wordsList2.length)
+	if(g_current_q == data_length)
 	{
 		return
 	}
 	document.getElementById("englishWroldID").innerHTML  = wordsList2[g_current_q]
-	option_array = Array.from({length: num_option}, () => Math.floor(Math.random() * wordsList2.length));
+	option_array = Array.from({length: num_option}, () => Math.floor(Math.random() * data_length));
 	for (var j = 0; j < num_option; j++) {
 		if(option_array[j] == g_current_q)
 		{
 			opIdx = g_current_q+1
-			if(opIdx == wordsList2.length)
+			if(opIdx == data_length)
 			{
 				opIdx-=2
 			}
