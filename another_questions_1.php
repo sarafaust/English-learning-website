@@ -19,8 +19,11 @@
 <script src="defines.js"></script>
 <script src="another_questions_1.js"></script>
 
-<!-- <?php
-    $xml=simplexml_load_file("QUESTIONS.xml");
+<?php
+    $path  = $_COOKIE["PATH"];
+    $level =  "<script>document.writeln(level);</script>";
+    $lesson =  "<script>document.writeln(lesson);</script>";
+    $xml = simplexml_load_file($path."QUESTIONS.xml");
 
     $questionData = $xml->xpath('//Questions/Question');
     //run over all word in Dict
@@ -31,7 +34,7 @@
         $questionList = $questionList.(string)$item->question."@@@";
         $correct_num_list=$correct_num_list.(string)$item->Correct."@@@";
     }
-?> -->
+?>
     <div class="container">
         <div class="top">
             <div class="right">
@@ -85,11 +88,10 @@
 
 <script type="text/javascript">
 
-// questionList = <?php echo json_encode($questionList); ?>;
-// correct_num_list = <?php echo json_encode($correct_num_list); ?>;
-
-// questionTextArray = questionList.split("@@@");
-// correctNunArray = correct_num_list.split("@@@");
+questionList = <?php echo json_encode($questionList); ?>;
+correct_num_list = <?php echo json_encode($correct_num_list); ?>;
+questionTextArray = questionList.split("@@@");
+correctNunArray = correct_num_list.split("@@@");
 </script>
 
 </html>
