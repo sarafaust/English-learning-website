@@ -5,7 +5,7 @@ var g_current_char = 0
 var point_per_char
 var myPoints = 0
 var model
-
+var g_last_length = 1
 function loadTestData()
 {
 	sum=0
@@ -69,6 +69,11 @@ function showClueFunc()
 
 function showAnsFunc()
 {
+	if(g_current_q > wordsList2.length)
+	{
+		return
+	}
+
 	if(g_current_q > wordsList2.length) return;
 	for (var i = g_current_char; i < wordsList2[g_current_q].length; i++) {
 		showClueFunc()
@@ -77,7 +82,13 @@ function showAnsFunc()
 
 function nextWordFunc()
 {
+	if(g_current_q > wordsList2.length)
+	{
+		return
+	}
+
 	g_current_char = 0
+	g_last_length = 1
 	g_current_q ++
 	if(g_current_q >= wordsList2.length)
 	{
@@ -91,23 +102,38 @@ function nextWordFunc()
 
 function checkChar()
 {
-	g_current_char++
-	subString = document.getElementById("inputAndID").value
-	if(g_current_char >= wordsList2[g_current_q].length)
+	if(g_current_q > wordsList2.length)
 	{
-		document.getElementById("nextWordID").style.display = "block";
-		return;
+		return
 	}
-	if(subString[g_current_char] == (wordsList2[g_current_q][g_current_char]))
+
+	subString = document.getElementById("inputAndID").value
+
+	//add char
+	if(subString.length > g_last_length)
 	{
-		myPoints+=point_per_char
+		g_current_char++
+		g_last_length ++
+
+	}
+	else
+	{
+		//remove char
+		g_current_char--
+		g_last_length--
 	}
 
 	if(subString == (wordsList2[g_current_q]))
 	{
+		myPoints+= point_per_char*subString.length
 		nextWordFunc()
 	}
 
+	if(g_current_char+1 >= wordsList2[g_current_q].length)
+	{
+		document.getElementById("nextWordID").style.display = "block";
+		return;
+	}
 }
 
 function showPoints()
@@ -118,7 +144,7 @@ function showPoints()
 	}
 
 	// cleanData();//
-	document.getElementById("textPointsID").innerHTML = Math.floor(myPoints);
+	document.getElementById("textPointsID").innerHTML =Math.min(Math.floor(myPoints),100);
 	modal = document.getElementById("myModal");
 
 	modal.style.display = "block";
