@@ -258,10 +258,8 @@ function getLessonLevel(level)
         }
         if(btnName == "againBtn")
         {
-            if(g_level_lesson == 2)
-            {
-                window.location.href="repeat_test.php";
-            }
+            window.location.href="repeat_test.php";
+
         }
     }
 
