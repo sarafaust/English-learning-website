@@ -70,6 +70,26 @@ function getCourseNum()
     return localStorage.getItem('CourseNumber'); // students/bugginers/buisness
 }
 
+function shuffle(array) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
+
 
 function loadLessonPage()
 {
@@ -201,7 +221,8 @@ function getLessonLevel(level)
         var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/"
         //save in cookies - in order to pass js value to php
         document.cookie = "PATH="+path;
-
+        document.cookie = "LESSON="+lesson;
+        document.cookie = "LEVEL="+level;
         if(btnName == "learnWordBtn")
         {
             window.location.href="study_3.php";
@@ -230,7 +251,8 @@ function getLessonLevel(level)
         {
             if(g_level_lesson == 1)
             {
-                window.location.href="practice.php";
+                window.location.href="practice_1.php";
+
             }
             else
             {
