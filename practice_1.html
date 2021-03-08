@@ -19,80 +19,41 @@ var lesson = parseInt(getCourseNum())+1;
 var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 </script>
 
-<?php
-$lesson = $_COOKIE["LESSON"];
-if((int)($lesson) < 3)
-{
-    $path  = $_COOKIE["PATH"];
-    $level =  "<script>document.writeln(level);</script>";
-    $lesson =  "<script>document.writeln(lesson);</script>";
-    $xml = simplexml_load_file($path."TARGETW.xml");
-
-    $englishWords = $xml->xpath('//Words/word');
-
-    $englishWordsList = "";
-    $PartOfSpeechEngList = "";
-    $HebList = "";
-    $EngInHebList= "";
-    $PartOfSpeechHebList= "";
-
-    foreach($englishWords as $item) {
-        $englishWordsList=$englishWordsList.(string)$item->Eng."@@@";
-        $HebList=$HebList.(string)$item->Heb."@@@";
-    }
-}
-else{
-echo "dfghjkl;";
-$path  = $_COOKIE["PATH"];
-$level =  "<script>document.writeln(level);</script>";
-$lesson =  "<script>document.writeln(lesson);</script>";
-$path =  $path."Text.lsn";
-$lsnFile = fopen($path, "r") or die("Unable to open file!");
-$txtData = fread($lsnFile,filesize($path));
-fclose($lsnFile);
-//remove all not achars except .|#|,
-//regex [^a-zA-Z, .|#|,]
-$x = hebrev($txtData);
-echo $x;
-// echo $txtData;
-$txtData = preg_replace("/[^a-zA-Z, .|#|,|@|^|?|!]+/", "", $txtData);
-
-}
-?>
 
 
 
 <script type="text/javascript">
-if(lesson <3)
-{
-    englishWordsList = <?php echo json_encode($englishWordsList); ?>;
-    HebList = <?php echo json_encode($HebList); ?>;
+// if(lesson <3)
+// {
+//     englishWordsList = <?php echo json_encode($englishWordsList); ?>;
+//     HebList = <?php echo json_encode($HebList); ?>;
 
-    englishWordsListTmp = englishWordsList.split("@@@");
-    HebListTmp = HebList.split("@@@");
+//     englishWordsListTmp = englishWordsList.split("@@@");
+//     HebListTmp = HebList.split("@@@");
 
-    englishWordsListArray = [];
-    $.each(englishWordsListTmp, function(i, el){
-        if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
-    });
+//     englishWordsListArray = [];
+//     $.each(englishWordsListTmp, function(i, el){
+//         if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
+//     });
 
-    HebListArray = [];
-    $.each(HebListTmp, function(i, el){
-        if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
-    });
+//     HebListArray = [];
+//     $.each(HebListTmp, function(i, el){
+//         if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
+//     });
 
-    data_length= englishWordsListArray.length -1
+//     data_length= englishWordsListArray.length -1
 
-}
-else
-{
-textLsnFile = <?php echo json_encode($txtData); ?>;
+// }
+// else
+// {
+// textLsnFile = <?php echo json_encode($txtData); ?>;
 
-}
+// }
 
 </script>
+<script src="practice_1.js"></script>
+
 <body style="margin:0; height:100%; max-width:100%" onload="updateDataPage()">
-    <script src="practice_1.js"></script>
     <div class="container">
         <div class="top">
             <div class="textTitle">אנגלית למתחילים רמה 2 שיעור 1</div>
