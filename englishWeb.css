@@ -226,21 +226,23 @@ transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will g
 .wordInListExeQC
 {
 	float: right;
-	width: 5%;
+	width: 20%;
 	height: 2rem;
 	text-align: center;
 	background-color: #ffccff;
 	font-size: 1.5rem;
+    direction: rtl;
 }
 .wordInListExeAC
 {
 	margin-right: 1rem;
 	float: right;
 	font-size: 1.5rem;
-	width: 5%;
+	width: 20%;
 	height: 2rem;
 	text-align: center;
 	background-color: #99ccff;
+    direction: rtl;
 }
 
 .wrrpListID

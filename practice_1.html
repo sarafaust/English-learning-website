@@ -19,44 +19,72 @@ var lesson = parseInt(getCourseNum())+1;
 var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 </script>
 
+<?php
+$lesson = $_COOKIE["LESSON"];
+if((int)($lesson) < 3)
+{
+    $path  = $_COOKIE["PATH"];
+    $level =  "<script>document.writeln(level);</script>";
+    $lesson =  "<script>document.writeln(lesson);</script>";
+    $xml = simplexml_load_file($path."TARGETW.xml");
+
+    $englishWords = $xml->xpath('//Words/word');
+
+    $englishWordsList = "";
+    $HebList = "";
+
+    foreach($englishWords as $item) {
+        $englishWordsList=$englishWordsList.(string)$item->Eng."@@@";
+        $HebList=$HebList.(string)$item->Heb."@@@";
+    }
+}
+else{
+// read TSL file
+// there is error in  read HEB php file.
+// so js read from defines files.
+}
+?>
 
 
 
 <script type="text/javascript">
-// if(lesson <3)
-// {
-//     englishWordsList = <?php echo json_encode($englishWordsList); ?>;
-//     HebList = <?php echo json_encode($HebList); ?>;
+HebListArray = []
+englishWordsListArray = []
 
-//     englishWordsListTmp = englishWordsList.split("@@@");
-//     HebListTmp = HebList.split("@@@");
+if(lesson <3)
+{
+    englishWordsList = <?php echo json_encode($englishWordsList); ?>;
+    HebList = <?php echo json_encode($HebList); ?>;
 
-//     englishWordsListArray = [];
-//     $.each(englishWordsListTmp, function(i, el){
-//         if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
-//     });
+    englishWordsListTmp = englishWordsList.split("@@@");
+    HebListTmp = HebList.split("@@@");
 
-//     HebListArray = [];
-//     $.each(HebListTmp, function(i, el){
-//         if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
-//     });
+    englishWordsListArray = [];
+    $.each(englishWordsListTmp, function(i, el){
+        if($.inArray(el, englishWordsListArray) === -1) englishWordsListArray.push(el);
+    });
 
-//     data_length= englishWordsListArray.length -1
+    HebListArray = [];
+    $.each(HebListTmp, function(i, el){
+        if($.inArray(el, HebListArray) === -1) HebListArray.push(el);
+    });
 
-// }
-// else
-// {
-// textLsnFile = <?php echo json_encode($txtData); ?>;
+    data_length= englishWordsListArray.length -1
 
-// }
+}
+else
+{
+
+textLsnFile = <?php echo json_encode($txtData); ?>;
+
+}
 
 </script>
-<script src="practice_1.js"></script>
-
 <body style="margin:0; height:100%; max-width:100%" onload="updateDataPage()">
+    <script src="practice_1.js"></script>
     <div class="container">
         <div class="top">
-            <div class="textTitle">אנגלית למתחילים רמה 2 שיעור 1</div>
+            <div class="textTitle" id="textTitleID">אנגלית למתחילים רמה 2 שיעור 1</div>
             <div class="row1">
                 <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                 <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>

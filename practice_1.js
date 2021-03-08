@@ -15,13 +15,12 @@ var g_points_arr = [4,3,2,1]
 var g_points_Helparr = [3,2,2,1]
 var wordlist_tmp
 
-lesson = 3;
-englishWordsListArray = []
-HebListArray = []
-
 function updateDataPage()
 {
-
+    document.getElementById("textTitleID").innerHTML = " אנגלית ל " + getHebCategory() + " רמה  "+ getLevel() + " שיעור " + (parseInt(getCourseNum())+1)
+    wordsList = englishWordsListArray
+    exerciseAnsWordList = HebListArray
+    exerciseWordList = HebListArray
 
     if(lesson >= 3)
     {
@@ -60,6 +59,7 @@ function updateDataPage()
     	exerciseWordList = questionsList
 
     }
+
 
 	// document.getElementById("imageWID").style.background  = "#f3f3f3 url('img_tree.png') no-repeat right top";;
 	CorrArr = Array(exerciseWordList.length).fill(0);
