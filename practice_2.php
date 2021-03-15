@@ -13,7 +13,7 @@
 <script>
 var level = getLevel();
 var lesson = parseInt(getCourseNum())+1;
-var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
+var path = getPathCategory()+"/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 </script>
 
 <?php
@@ -24,9 +24,10 @@ $path =  $path."Text.lsn";
 $lsnFile = fopen($path, "r") or die("Unable to open file!");
 $txtData = fread($lsnFile,filesize($path));
 fclose($lsnFile);
-//remove all not achars except #
-//regex [^a-zA-Z, #]
-$txtData = preg_replace("/[^a-zA-Z, #]+/", "", $txtData);
+//remove all not achars except .|#|,
+//regex [^a-zA-Z, .|#|,]
+
+$txtData = preg_replace("/[^a-zA-Z, .|#|,|?|!]+/", "", $txtData);
 ?>
 <script type="text/javascript">
 textLsnFile = <?php echo json_encode($txtData); ?>;

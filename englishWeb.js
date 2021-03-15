@@ -36,6 +36,15 @@ function getCategory()
     return localStorage.getItem('Category'); // students/bugginers/buisness
 }
 
+function getPicPath(lesson, level)
+{
+     var urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.JPG'
+    if(getCategory()!= BEGINNERS)
+    {
+      urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.jpg'
+    }
+    return urlPath
+}
 function getPathCategory()
 {
     category = localStorage.getItem('Category')
@@ -303,7 +312,7 @@ function updateBtnLevel1(lesson)
 
         if(btnName == "exerciseBtn")
         {
-            if(g_level_lesson == 1)
+            if((g_level_lesson == 1)&& (getCategory() == BEGINNERS))
             {
                 window.location.href="practice_1.php";
 
@@ -316,7 +325,7 @@ function updateBtnLevel1(lesson)
 
         if(btnName == "addQWordBtn")
         {
-            if(g_level_lesson == 1)
+            if((g_level_lesson == 1)&& (getCategory() == BEGINNERS))
             {
                 window.location.href="another_questions.php";
             }
@@ -355,9 +364,9 @@ function relevantBtn(pageName)
 
 function loadExercisePage()
 {
-  html_code = "";
-  for (i = 0; i < wordsList.length; i++) {
+    html_code = "";
+    for (i = 0; i < wordsList.length; i++) {
         html_code += "<div  class='wordC' onclick='pressWordExe("+i+")' value="+i+">"+wordsList[i]+"</div>";
       }
-  document.getElementById("wordsWrpprID").innerHTML=html_code;
+    document.getElementById("wordsWrpprID").innerHTML=html_code;
 }

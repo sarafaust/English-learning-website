@@ -22,19 +22,20 @@ var path = getPathCategory()+"/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 
 <?php
 $path  = $_COOKIE["PATH"];
-echo $path;
 $level =  "<script>document.writeln(level);</script>";
 $lesson =  "<script>document.writeln(lesson);</script>";
 $xml = simplexml_load_file($path."TARGETW.xml");
 
 $englishWords = $xml->xpath('//Words/word');
-
 $englishWordsList = "";
 $PartOfSpeechEngList = "";
 $HebList = "";
 $EngInHebList= "";
 $PartOfSpeechHebList= "";
-
+if(count($englishWords)== 0)
+{
+    $englishWords = $xml->xpath('//Words/Word');
+}
 foreach($englishWords as $item) {
     $englishWordsList=$englishWordsList.(string)$item->Eng."@@@";
     $PartOfSpeechEngList=$PartOfSpeechEngList.(string)$item->PartOfSpeechEng."@@@";

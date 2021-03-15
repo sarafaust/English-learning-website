@@ -27,6 +27,8 @@ function loadQues()
 {
 	loadDic();
 	htmlq = ""
+    document.getElementById("titeID").innerHTML = " אנגלית  " + getHebCategory() + " רמה  "+ getLevel() + " שיעור " + (parseInt(getCourseNum())+1)
+
 	for (var i = 0; i < questionTextArray.length -1 /*the prsing xml create +1 array*/; i++) {
 		numQ = i+1
 		htmlq+="<div class='addQC'><div class='wrppQC'><div class='numQC' id='numQ"+i+"ID'></div><input type='text' class='inputAnsTxtC' value='"+questionTextArray[i]+"' id='inputAns"+i+"ID'></div><div class='wrrpBtnC'>"
@@ -63,7 +65,11 @@ function loadQues()
 	    modal.style.display = "none";
 	  }
 	}
-
+    level = getLevel()
+    lesson = getCourseNum()
+    var urlPath = getPicPath(lesson, level)
+    var urlString = 'url('+urlPath+')';
+    document.getElementById("imageWID").style.backgroundImage =  urlString;
 }
 
 function updateAns(num_q, num_op)

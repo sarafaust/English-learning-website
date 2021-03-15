@@ -39,10 +39,18 @@ var GO_FLAG = 99;
     wordIdx = Math.min(max_word, wordIdx);
     wordIdx = Math.max(0, wordIdx);
     // var urlString = 'url(buttons/' + imagePrefix + '.png)';
-    var urlString = 'url(English4Beginners/LEVEL1/LESSON1/pic/'+wordsList2[wordIdx]+'.jpg)';
+    // var urlString = 'url(English4Beginners/LEVEL1/LESSON1/pic/'+wordsList2[wordIdx]+'.jpg)';
+    var urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.JPG'
+    if(getCategory()!= BEGINNERS)
+    {
+      urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.jpg'
+    }
+    // alert(urlPath)
+    var urlString = 'url('+urlPath+')';
     clickedWordIdx = wordIdx;
     document.getElementById("imgWordId").style.backgroundImage =  urlString;
-    document.getElementById("imgWordId").src =  'English4Beginners/LEVEL1/LESSON1/pic/'+wordsList2[wordIdx]+'.jpg';
+    // document.getElementById("imgWordId").src =  'English4Beginners/LEVEL1/LESSON1/pic/'+wordsList2[wordIdx]+'.jpg';
+    document.getElementById("imgWordId").src =  'picture1.JPG';
     document.getElementById("textMemHelpID").innerHTML  =  memHelp[wordIdx];
     document.getElementById("progressBarID").value =Math.min( wordIdx +1, max_word+1) ;
     document.getElementById("wordCharId").innerHTML= wordsList2[wordIdx];

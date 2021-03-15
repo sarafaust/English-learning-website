@@ -39,7 +39,7 @@
         <div class="top">
             <div class="right">
                 <div class="row1">
-                  <label class="label"> אנגלית <?php echo $english_to;?></label>
+                  <label class="label" id="titeID"></label>
                     <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                     <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
                     <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
@@ -59,8 +59,8 @@
              </div>
            </fieldset>
            <button class="btn1" id="grammerhlpID"> סימני ניקוד </button>
-           <button class="btn1" id="textLessonID"> סטקסט של השיעור</button>
-
+           <button class="btn1" id="textLessonID"> טקסט של השיעור</button>
+            <div class="imageWC" id="imageWID"></div>
           </div>
 
 
