@@ -188,6 +188,7 @@ function showGrads()
 
 function getLessonLevel(level)
 {
+    // lessonBtnFunc(level,0)//for init
     document.getElementById("labelTitleID").innerHTML = " הנך כעת ברמה "+level+ " בשיעור 1"
     cat =  getHebCategory()
     document.getElementById("lessonTitleID").innerHTML="אנגלית "+ cat
@@ -235,6 +236,24 @@ function getLessonLevel(level)
         document.getElementById("testWordBtnID").style.display = "block";
         document.getElementById("againBtnID").style.display = "block";
      }
+     if(getCategory()== BUSINESS)
+     {
+        document.getElementById("level_2_btnID").style.display = "none";
+        document.getElementById("level_3_btnID").style.display = "none";
+        document.getElementById("addQWordBtnID").style.display = "none";
+
+        // if((lesson == 21) || (lesson == 63))
+        // {
+        //     document.getElementById("addQWordBtnID").style.display = "block";
+        // }
+     }
+
+     if(getCategory()== STUDENTS)
+     {
+        document.getElementById("addQWordBtnID").style.display = "none";
+
+
+     }
  }
 
      function lessonBtnFunc(list, lesson)
@@ -243,9 +262,25 @@ function getLessonLevel(level)
         updateLevel(list);
         g_lesson_in_level = lesson;
         g_level_in_levels = list;
-        if(list == 1)
+        if((list == 1)&&(getCategory()== BEGINNERS))
         {
             updateBtnLevel1(lesson)
+        }
+
+        if(getCategory()== STUDENTS)//students
+        {
+            document.getElementById("addQWordBtnID").style.display = "none";
+            if((list == 1) && (lesson <= 35))
+            {
+                document.getElementById("addQWordBtnID").style.display = "block";
+            }
+        }
+        if(getCategory()== BUSINESS)
+        {
+            if((lesson == 21) || (lesson == 63))
+            {
+                document.getElementById("addQWordBtnID").style.display = "block";
+            }
         }
     }
 function updateBtnLevel1(lesson)

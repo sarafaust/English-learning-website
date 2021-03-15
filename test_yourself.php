@@ -29,6 +29,14 @@ $lesson =  "<script>document.writeln(lesson);</script>";
 $xml = simplexml_load_file($path."TARGETW.xml");
 
 $englishWords = $xml->xpath('//Words/word');
+if(count($englishWords)== 0)
+{
+    $englishWords = $xml->xpath('//Words/Word');
+}
+if(count($englishWords)== 0)
+{
+    $englishWords = $xml->xpath('//words/word');
+}
 
 $englishWordsList = "";
 $HebList = "";
