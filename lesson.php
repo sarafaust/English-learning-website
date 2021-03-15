@@ -134,7 +134,7 @@
             </div>
             <div class="right">
                 <div class="row1">
-                    <label class="label"> אנגלית <?php echo $english_to;?></label>
+                    <label class="label" id="lessonTitleID"> אנגלית </label>
                     <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                     <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
                     <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
@@ -149,7 +149,7 @@
             </div>
         </div>
         <div class="bottom">
-            <label class="label2"> לבחירת שיעור אחר אנה בחר מהרשימה</label>
+            <label class="label2"> לבחירת שיעור אחר אנא בחר מהרשימה</label>
             <div class="level">
                 <button class="btn1" onclick="getLessonLevel(3) " id="level_3_btnID">רמה 3 <br> דקדוק</button>
                 <button class="btn1" onclick="getLessonLevel(2)" id="level_2_btnID"> רמה 2 <br> אוצר מילים</button>
@@ -186,7 +186,8 @@
   var lessons1 = <?php echo json_encode($lessons_string1); ?>;
   var lessons_array1 = lessons1.split("@@@");
   var html_code1 = "<nav>"+'\n'+"<ul>";
-  for (i = 0; i < lessons_array1.length; i++) {
+//   for (i = 0; i < lessons_array1.length; i++) {
+  for (i = 0; i < lessons_array1.length-4; i++) {//not support yet
     html_code1 += "<li><button onclick='lessonBtnFunc(1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
   }
   html_code1+="</nav>"

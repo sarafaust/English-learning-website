@@ -163,6 +163,8 @@ function showGrads()
 function getLessonLevel(level)
 {
     document.getElementById("labelTitleID").innerHTML = " הנך כעת ברמה "+level+ " בשיעור 1"
+    cat =  getHebCategory()
+    document.getElementById("lessonTitleID").innerHTML="אנגלית  "+ cat
     updateLevel(level);
     g_level_lesson = level;
      if(level == 1)
@@ -174,6 +176,7 @@ function getLessonLevel(level)
         document.getElementById("testBtnID").style.display = "none";
         document.getElementById("testWordBtnID").style.display = "none";
         document.getElementById("againBtnID").style.display = "none";
+          document.getElementById("addQWordBtnID").style.display = "block";
      }
      if(level == 2)
      {
@@ -185,6 +188,7 @@ function getLessonLevel(level)
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  2";
         document.getElementById("testWordBtnID").style.display = "block";
         document.getElementById("againBtnID").style.display = "block";
+        document.getElementById("addQWordBtnID").style.display = "block";
      }
      if(level == 3)
      {
@@ -194,6 +198,7 @@ function getLessonLevel(level)
         document.getElementById("lesson_input").innerHTML=html_code3;
         document.getElementById("testBtnID").style.display = "block";
         document.getElementById("testBtnID").innerHTML  = "מבחן לרמה  3";
+          document.getElementById("addQWordBtnID").style.display = "block";
 
         document.getElementById("testWordBtnID").style.display = "block";
         document.getElementById("againBtnID").style.display = "block";
@@ -206,8 +211,29 @@ function getLessonLevel(level)
         updateLevel(list);
         g_lesson_in_level = lesson;
         g_level_in_levels = list;
+        if(list == 1)
+        {
+            updateBtnLevel1(lesson)
+        }
     }
-
+function updateBtnLevel1(lesson)
+{
+    if (lesson !=0)//to first lesson - not support yet with other practies
+    {
+        document.getElementById("addQWordBtnID").style.display = "none";
+    }
+    else{
+          document.getElementById("addQWordBtnID").style.display = "block";
+    }
+    if(lesson > 9)
+    {
+        document.getElementById("exerciseBtnID").style.display = "none";
+    }
+    else
+    {
+        document.getElementById("exerciseBtnID").style.display = "block";
+    }
+}
     function updateBtn(btnName)
     {
         // againBtn
