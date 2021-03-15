@@ -27,13 +27,30 @@ function changeAudioModeBtn()
 function updateCategory(category)
 {
     localStorage.setItem('Category', category); // students/bugginers/buisness
+    var XMLLessonsPath = getPathCategory()+"/XML/XMLLessons.xml"
+    document.cookie = "XML_LESSON_PATH="+XMLLessonsPath;
 }
 
 function getCategory()
 {
-    alert(localStorage.getItem('Category'))
     return localStorage.getItem('Category'); // students/bugginers/buisness
 }
+
+function getPathCategory()
+{
+    category = localStorage.getItem('Category')
+    if(category == BEGINNERS)
+    {
+        return "English4Beginners";
+    }
+    if(category == STUDENTS)
+    {
+        return "English4Students";
+    }
+    else
+    return "English4Business"
+}
+
 
 function getHebCategory()
 {
@@ -44,7 +61,7 @@ function getHebCategory()
     }
     if(category == STUDENTS)
     {
-        return "סטודנטים";
+        return "לסטודנטים";
     }
     else
     return "לאוניברסיטה"
@@ -164,7 +181,7 @@ function getLessonLevel(level)
 {
     document.getElementById("labelTitleID").innerHTML = " הנך כעת ברמה "+level+ " בשיעור 1"
     cat =  getHebCategory()
-    document.getElementById("lessonTitleID").innerHTML="אנגלית  "+ cat
+    document.getElementById("lessonTitleID").innerHTML="אנגלית "+ cat
     updateLevel(level);
     g_level_lesson = level;
      if(level == 1)
@@ -177,8 +194,14 @@ function getLessonLevel(level)
         document.getElementById("testWordBtnID").style.display = "none";
         document.getElementById("againBtnID").style.display = "none";
           document.getElementById("addQWordBtnID").style.display = "block";
+          if(getCategory != BEGINNERS)
+          {
+             document.getElementById("testBtnID").style.display = "block";
+             document.getElementById("testWordBtnID").style.display = "block";
+              document.getElementById("againBtnID").style.display = "block";
+          }
      }
-     if(level == 2)
+     if((level == 2)&&(getCategory() != BUSINESS))
      {
         document.getElementById("level_2_btnID").style.backgroundColor =  "#bb99ff";
         objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
@@ -190,7 +213,7 @@ function getLessonLevel(level)
         document.getElementById("againBtnID").style.display = "block";
         document.getElementById("addQWordBtnID").style.display = "block";
      }
-     if(level == 3)
+     if((level == 3)&&(getCategory() != BUSINESS))
      {
         document.getElementById("level_3_btnID").style.backgroundColor =  "#bb99ff";
         objectBtn = document.getElementById("level_1_btnID").style.backgroundColor = "rgb(114, 142, 235)";
@@ -218,6 +241,8 @@ function getLessonLevel(level)
     }
 function updateBtnLevel1(lesson)
 {
+    if(getCategory()!= BEGINNERS)
+    return;
     if (lesson !=0)//to first lesson - not support yet with other practies
     {
         document.getElementById("addQWordBtnID").style.display = "none";
@@ -244,7 +269,10 @@ function updateBtnLevel1(lesson)
         g_lastBtn_lesson = btnName;
         var level = getLevel();
         var lesson = parseInt(getCourseNum())+1;
-        var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/"
+
+        var path = getPathCategory()+"/LEVEL"+level+"/LESSON"+(lesson)+"/"
+
+
         //save in cookies - in order to pass js value to php
         document.cookie = "PATH="+path;
         document.cookie = "LESSON="+lesson;

@@ -28,7 +28,12 @@
 
     wordIdx = Math.min(max_word, wordIdx);
     wordIdx = Math.max(0, wordIdx);
-    var urlPath = 'English4Beginners/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.JPG'
+    var urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.JPG'
+    if(getCategory()!= BEGINNERS)
+    {
+      urlPath = getPathCategory()+'/LEVEL'+level+'/LESSON'+lesson+'/pic/picture1.jpg'
+    }
+    // alert(urlPath)
     var urlString = 'url('+urlPath+')';
     clickedWordIdx = wordIdx;
     document.getElementById("imgWordId").style.backgroundImage =  urlString;

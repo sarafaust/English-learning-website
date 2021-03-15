@@ -17,14 +17,15 @@
 <script>
 var level = getLevel();
 var lesson = parseInt(getCourseNum())+1;
-var path = "English4Beginners/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
+var path = getPathCategory()+"/LEVEL"+level+"/LESSON"+(lesson)+"/TARGETW.xml"
 </script>
 
 <?php
 $path  = $_COOKIE["PATH"];
+echo $path;
 $level =  "<script>document.writeln(level);</script>";
 $lesson =  "<script>document.writeln(lesson);</script>";
-$xml = simplexml_load_file($path);
+$xml = simplexml_load_file($path."TARGETW.xml");
 
 $englishWords = $xml->xpath('//Words/word');
 
