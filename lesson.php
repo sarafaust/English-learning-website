@@ -11,7 +11,8 @@
 
   <title>English Demo</title>
 </head>
-
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body style="margin:0; height:100%; max-width:100%" >
 <script src="englishWeb.js"></script>
 
@@ -96,9 +97,15 @@
     {
         $lessons_string3=$lessons_string3.(string)$lesson."@@@";
     }
-
 ?>
+
 <script src="dictionary.js"></script>
+
+<script type="text/javascript">
+var myusername = <?php echo json_encode($myusername); ?>;
+var mypassword = <?php echo json_encode($mypassword); ?>;
+saveUserName(myusername, mypassword)
+</script>
 
 <?php
     $xml=simplexml_load_file("XmlDictionary.xml");
@@ -129,7 +136,7 @@
     <div class="container">
         <div class="top">
             <div class="left">
-                <button class="btn1" id="testBtnID"> מבחן לרמה   </button>
+                <button class="btn1" id="testBtnID" > מבחן לרמה   </button>
                 <button class="btn1" id="gradsBtnID"  onclick="showGrads()"> ציונים  </button>
                 <button class="btn1" onclick="fullInstructions()"> הוראות מלאות  </button>
                 <button class="btn1" onclick="helperForBegginsPage()"> עזרה מקוצרת  </button>
@@ -234,5 +241,24 @@ ArbDictArr = ArbWordTransList.split("@@@");
 
 createDict();
 saveDic();
+
+
+</script>
+
+<script>
+
+
+function saveGrade_org(points)
+{
+    userKey = getUserKey()
+    category = getNumCategory()
+    level = getLevel()
+    lesson = getCourseNum()
+
+    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, points: points })
+     .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+}
 </script>
 </html>

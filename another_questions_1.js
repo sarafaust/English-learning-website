@@ -110,9 +110,11 @@ function checkAllAns()
 		}
 	}
 	cleanData();
-	document.getElementById("textPointsID").innerHTML = Math.floor(points);
+    total_grade =  Math.floor(points);
+	document.getElementById("textPointsID").innerHTML = total_grade
 	modal = document.getElementById("myModal");
 
 	modal.style.display = "block";
+    saveGrade(total_grade)
 }
 

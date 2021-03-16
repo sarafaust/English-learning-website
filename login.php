@@ -15,6 +15,7 @@
 
 <script>
     localStorage.setItem('AudioMode', 'true');
+    level = localStorage.getItem('CourseLevel');
 </script>
 <script src="englishWeb.js"></script>
 

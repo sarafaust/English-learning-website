@@ -1,4 +1,10 @@
 //const
+
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
 var STUDENTS = "students"
 var BEGINNERS = "beginners"
 var BUSINESS = "business"
@@ -6,6 +12,10 @@ var BUSINESS = "business"
 var LEVEL_LESSON_1 = "1"
 var LEVEL_LESSON_2 = "2"
 var LEVEL_LESSON_3 = "3"
+
+var CAT_NUM_BEGINNERS = 1
+var CAT_NUM_STUDENT = 2
+var CAT_NUM_BUSINESS = 3
 
 var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
 var exerciseWordList = [" גֵ'י "," אֶס "," סִי ","אֶן "," פִּי "," דִי "," וּאַי "," יוּ "," אַר "," קְיוּ "," זֶד "," בּי "," גִ'י "," אַי "," אֶם "," אֶף "," 'אֵיץ "," אֵי "," קֵי "," טִי "," בִי "," אֶל "," אֶקְס "," אוֹוּ "," דַבְּליוּ "," אִי "]
@@ -34,6 +44,20 @@ function updateCategory(category)
 function getCategory()
 {
     return localStorage.getItem('Category'); // students/bugginers/buisness
+}
+
+function getNumCategory()
+{
+    cat = localStorage.getItem('Category')
+    if (cat == STUDENTS)
+    {
+        return CAT_NUM_STUDENT
+    }
+    if (cat == BEGINNERS)
+    {
+        return CAT_NUM_BEGINNERS
+    }
+    return CAT_NUM_BUSINESS
 }
 
 function getPicPath(lesson, level)
@@ -78,22 +102,22 @@ function getHebCategory()
 
 function updateLevel(level)
 {
-    localStorage.setItem('CourseLevel', level); // students/bugginers/buisness
+    localStorage.setItem('CourseLevel', level);
 }
 
 function updateCourseNum(num)
 {
-    localStorage.setItem('CourseNumber', num); // students/bugginers/buisness
+    localStorage.setItem('CourseNumber', num);
 }
 
 function getLevel()
 {
-    return localStorage.getItem('CourseLevel'); // students/bugginers/buisness
+    return localStorage.getItem('CourseLevel');
 }
 
 function getCourseNum()
 {
-    return localStorage.getItem('CourseNumber'); // students/bugginers/buisness
+    return localStorage.getItem('CourseNumber');
 }
 
 function shuffle(array) {
@@ -404,4 +428,28 @@ function loadExercisePage()
         html_code += "<div  class='wordC' onclick='pressWordExe("+i+")' value="+i+">"+wordsList[i]+"</div>";
       }
     document.getElementById("wordsWrpprID").innerHTML=html_code;
+}
+
+function saveGrade(points)
+{
+    userKey = getUserKey()
+    category = getNumCategory()
+    level = getLevel()
+    lesson = getCourseNum()
+
+    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, points: points })
+     .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+}
+
+function saveUserName(username, password)
+{
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+}
+
+function getUserKey()
+{
+    return localStorage.getItem('username') + localStorage.getItem('password')  ;
 }

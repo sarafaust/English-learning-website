@@ -1,5 +1,5 @@
- var transWorld= ["אבא", "חום", "יש", "ו..." , "חולצה", "גם", "מכנסיים", "אז", "כתום"]
- var wordsList2 = ["Father","brown", "has",  "and", "shirt", "also","pants", "So", "orange"]
+var transWorld
+var wordsList2
 var g_current_q = 0
 var g_current_char = 0
 var point_per_char
@@ -8,12 +8,14 @@ var model
 var g_last_length = 1
 function loadTestData()
 {
+    transWorld = HebListArray
+    wordsList2 = englishWordsListArray
 	sum=0
-	for (var i = 0; i < wordsList2.length; i++) {
+	for (var i = 0; i < data_length; i++) {
 		sum+=wordsList2[i].length
 	}
 	point_per_char = 100 / sum
-	document.getElementById("prgressTestID").max = wordsList2.length;
+	document.getElementById("prgressTestID").max = data_length;
 	initWordQuestion()
 
 	var modal = document.getElementById("myModal");
@@ -46,6 +48,7 @@ function loadTestData()
 function initWordQuestion()
 {
 	document.getElementById("heblishWroldID").innerHTML =  transWorld[g_current_q]
+	document.getElementById("partOfSpeachID").innerHTML =  PartOfSpeechHebListArray[g_current_q]
 	document.getElementById("inputAndID").value =  wordsList2[g_current_q][0]
 	document.getElementById("nextWordID").style.display = "none";
 	document.getElementById("prgressTestID").value = g_current_q+1;
@@ -53,7 +56,7 @@ function initWordQuestion()
 
 function showClueFunc()
 {
-	if(g_current_q > wordsList2.length) return;
+	if(g_current_q > data_length) return;
 	currentW = wordsList2[g_current_q]
 	if(g_current_char+1 <= currentW.length)
 
@@ -69,12 +72,12 @@ function showClueFunc()
 
 function showAnsFunc()
 {
-	if(g_current_q > wordsList2.length)
+	if(g_current_q > data_length)
 	{
 		return
 	}
 
-	if(g_current_q > wordsList2.length) return;
+	if(g_current_q > data_length) return;
 	for (var i = g_current_char; i < wordsList2[g_current_q].length; i++) {
 		showClueFunc()
 	}
@@ -82,15 +85,16 @@ function showAnsFunc()
 
 function nextWordFunc()
 {
-	if(g_current_q > wordsList2.length)
+	if(g_current_q >= data_length)
 	{
+        showPoints()
 		return
 	}
 
 	g_current_char = 0
 	g_last_length = 1
 	g_current_q ++
-	if(g_current_q >= wordsList2.length)
+	if(g_current_q >= data_length)
 	{
 		showPoints()
 		return
@@ -102,7 +106,7 @@ function nextWordFunc()
 
 function checkChar()
 {
-	if(g_current_q > wordsList2.length)
+	if(g_current_q > data_length)
 	{
 		return
 	}
@@ -138,14 +142,16 @@ function checkChar()
 
 function showPoints()
 {
-	if(g_current_q > wordsList2.length)
+	if(g_current_q > data_length)
 	{
 		return
 	}
 
 	// cleanData();//
-	document.getElementById("textPointsID").innerHTML =Math.min(Math.floor(myPoints),100);
+    total_grade = Math.min(Math.floor(myPoints),100);
+	document.getElementById("textPointsID").innerHTML = total_grade
 	modal = document.getElementById("myModal");
 
 	modal.style.display = "block";
+    saveGrade(total_grade)
 }
