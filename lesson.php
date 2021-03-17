@@ -200,13 +200,13 @@ saveUserName(myusername, mypassword)
 
     {
         for (i = 0; i < lessons_array1.length-4; i++) {//not support yet
-            html_code1 += "<li><button onclick='lessonBtnFunc(this, 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
+            html_code1 += "<li><button onclick='lessonBtnFunc( 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
         }
     }
     else
     {
         for (i = 0; i < lessons_array1.length; i++) {//not support yet
-            html_code1 += "<li><button onclick='lessonBtnFunc(this, 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
+            html_code1 += "<li><button onclick='lessonBtnFunc( 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
         }
     }
   html_code1+="</nav>"
@@ -215,7 +215,7 @@ saveUserName(myusername, mypassword)
         var lessons_array2 = lessons2.split("@@@");
         var html_code2 = "<nav>"+'\n'+"<ul>";
         for (i = 0; i < lessons_array2.length; i++) {
-            html_code2 += "<li><button onclick='lessonBtnFunc(this, 2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
+            html_code2 += "<li><button onclick='lessonBtnFunc( 2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
         }
         html_code2+="</nav>"
 
@@ -223,7 +223,7 @@ saveUserName(myusername, mypassword)
         var lessons_array3 = lessons3.split("@@@");
         var html_code3 = "<nav>"+'\n'+"<ul>";
         for (i = 0; i < lessons_array3.length; i++) {
-            html_code3 += "<li><button onclick='lessonBtnFunc(this, 3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
+            html_code3 += "<li><button onclick='lessonBtnFunc( 3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
         }
         html_code3+="</nav>"
 

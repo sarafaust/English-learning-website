@@ -293,9 +293,8 @@ function getLastLessonName(name)
 {
     return localStorage.getItem('LastLessonName'); // students/bugginers/buisness
 }
-     function lessonBtnFunc(me, list, lesson)
+     function lessonBtnFunc(list, lesson)
     {
-        saveLastLessonName(me.innerText)
         updateCourseNum(lesson);
         updateLevel(list);
         g_lesson_in_level = lesson;
@@ -451,7 +450,7 @@ function saveGrade(points)
     level = getLevel()
     lesson = getCourseNum()
 
-    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, lessonName:getLastLessonName(), points: points })
+    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, points: points })
      .done(function( data ) {
     alert( "Data Loaded: " + data );
   });
