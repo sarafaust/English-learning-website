@@ -16,6 +16,11 @@ var LEVEL_LESSON_3 = "3"
 var CAT_NUM_BEGINNERS = 1
 var CAT_NUM_STUDENT = 2
 var CAT_NUM_BUSINESS = 3
+var lastLessonName = ''
+
+var g_lessonsArray_1
+var g_lessonsArray_2
+var g_lessonsArray_3
 
 var wordsList = ["A","B","C", "D", "E", "F", "G", "H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T","U","V","W", "X","Y", "Z"]
 var exerciseWordList = [" גֵ'י "," אֶס "," סִי ","אֶן "," פִּי "," דִי "," וּאַי "," יוּ "," אַר "," קְיוּ "," זֶד "," בּי "," גִ'י "," אַי "," אֶם "," אֶף "," 'אֵיץ "," אֵי "," קֵי "," טִי "," בִי "," אֶל "," אֶקְס "," אוֹוּ "," דַבְּליוּ "," אִי "]
@@ -276,12 +281,21 @@ function getLessonLevel(level)
      {
         document.getElementById("addQWordBtnID").style.display = "none";
 
-
      }
  }
 
-     function lessonBtnFunc(list, lesson)
+function saveLastLessonName(name)
+{
+    localStorage.setItem('LastLessonName', name); // students/bugginers/buisness
+}
+
+function getLastLessonName(name)
+{
+    return localStorage.getItem('LastLessonName'); // students/bugginers/buisness
+}
+     function lessonBtnFunc(me, list, lesson)
     {
+        saveLastLessonName(me.innerText)
         updateCourseNum(lesson);
         updateLevel(list);
         g_lesson_in_level = lesson;
@@ -437,7 +451,7 @@ function saveGrade(points)
     level = getLevel()
     lesson = getCourseNum()
 
-    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, points: points })
+    $.post( "test.php", { userKey: userKey, category: category, level: level, lesson: lesson, lessonName:getLastLessonName(), points: points })
      .done(function( data ) {
     alert( "Data Loaded: " + data );
   });

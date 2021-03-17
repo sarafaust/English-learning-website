@@ -196,16 +196,26 @@ saveUserName(myusername, mypassword)
   var lessons_array1 = lessons1.split("@@@");
   var html_code1 = "<nav>"+'\n'+"<ul>";
 //   for (i = 0; i < lessons_array1.length; i++) {
-  for (i = 0; i < lessons_array1.length-4; i++) {//not support yet
-    html_code1 += "<li><button onclick='lessonBtnFunc(1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
-  }
+    if(getCategory == BEGINNERS)
+
+    {
+        for (i = 0; i < lessons_array1.length-4; i++) {//not support yet
+            html_code1 += "<li><button onclick='lessonBtnFunc(this, 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
+        }
+    }
+    else
+    {
+        for (i = 0; i < lessons_array1.length; i++) {//not support yet
+            html_code1 += "<li><button onclick='lessonBtnFunc(this, 1,"+i+")' class='lessonBtn'>"+lessons_array1[i]+"</button></li>";
+        }
+    }
   html_code1+="</nav>"
 
      var lessons2 = <?php echo json_encode($lessons_string2); ?>;
         var lessons_array2 = lessons2.split("@@@");
         var html_code2 = "<nav>"+'\n'+"<ul>";
         for (i = 0; i < lessons_array2.length; i++) {
-            html_code2 += "<li><button onclick='lessonBtnFunc(2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
+            html_code2 += "<li><button onclick='lessonBtnFunc(this, 2,"+i+")' class='lessonBtn'>"+lessons_array2[i]+"</button></li>";
         }
         html_code2+="</nav>"
 
@@ -213,7 +223,7 @@ saveUserName(myusername, mypassword)
         var lessons_array3 = lessons3.split("@@@");
         var html_code3 = "<nav>"+'\n'+"<ul>";
         for (i = 0; i < lessons_array3.length; i++) {
-            html_code3 += "<li><button onclick='lessonBtnFunc(3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
+            html_code3 += "<li><button onclick='lessonBtnFunc(this, 3,"+i+")' class='lessonBtn'>"+lessons_array3[i]+"</button></li>";
         }
         html_code3+="</nav>"
 
@@ -225,6 +235,9 @@ saveUserName(myusername, mypassword)
     document.getElementById("level_2_btnID").innerHTML = "רמה 2"
     document.getElementById("level_3_btnID").innerHTML = "רמה 3"
   }
+  g_lessonsArray_1 = lessons_array1
+  g_lessonsArray_2 = lessons_array2
+  g_lessonsArray_3 = lessons_array3
 </script>
 
 <script type="text/javascript">
