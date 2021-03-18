@@ -235,9 +235,9 @@ saveUserName(myusername, mypassword)
     document.getElementById("level_2_btnID").innerHTML = "רמה 2"
     document.getElementById("level_3_btnID").innerHTML = "רמה 3"
   }
-  g_lessonsArray_1 = lessons_array1
-  g_lessonsArray_2 = lessons_array2
-  g_lessonsArray_3 = lessons_array3
+  saveLessonArray(1, lessons_array1)
+  saveLessonArray(2, lessons_array2)
+  saveLessonArray(3, lessons_array3)
 </script>
 
 <script type="text/javascript">

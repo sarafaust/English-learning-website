@@ -12,7 +12,7 @@
 
   <title>English Demo</title>
 </head>
-<body style="margin:0; height:100%; max-width:100%" >
+<body style="margin:0; height:100%; max-width:100%" onload="loadData()">
 <script src="englishWeb.js"></script>
 <script src="grads_page.js"></script>
 
@@ -50,10 +50,10 @@
           <tr><td>Row:9 Cell:1</td><td>Row:9 Cell:2</td><td>Row:9 Cell:3</td></tr>
                 </table>
                 </div>
-                <div id="testInfoWrppr">
+                <!--<div id="testInfoWrppr">
                   <div id="testInfoID"> מבחן לרמה 1</div>
                   <label>אין מידע </label>
-                </div>
+                </div>-->
 
                 <div id="avrgInfoID">
                   <div id="avgExeID" class="labelsAvg">
@@ -63,18 +63,15 @@
 
                   <div id="avgTestID" class="labelsAvg">
                     <div class="infoAvgC">ממוצע  ציונים </div>
-                    <div class="textAvgC">no info</div>
+                    <div class="textAvgC" id="angExerTxtID">no info</div>
                   </div>
 
-                  <div id="avgAllID" class="labelsAvg">
-                    <div class="infoAvgC">ממוצע משוקלל  </div>
-                    <div class="textAvgC">no info</div>
-                  </div>
+
 
                 </div>
                 <div id="allAvgID">
                     <div class="infoAvgC">ממוצע משוקלל לכל הרמות  </div>
-                    <div class="textAvgC">no info</div>
+                    <div class="textAvgC" id="avgAllTxtID">no info</div>
 
                 </div>
 

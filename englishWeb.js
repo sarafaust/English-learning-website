@@ -221,7 +221,7 @@ function getLessonLevel(level)
     document.getElementById("labelTitleID").innerHTML = " הנך כעת ברמה "+level+ " בשיעור 1"
     cat =  getHebCategory()
     document.getElementById("lessonTitleID").innerHTML="אנגלית "+ cat
-    updateLevel(level);
+    updateLevel(level);/*start from 1*/
     g_level_lesson = level;
      if(level == 1)
      {
@@ -295,8 +295,8 @@ function getLastLessonName(name)
 }
      function lessonBtnFunc(list, lesson)
     {
-        updateCourseNum(lesson);
-        updateLevel(list);
+        updateCourseNum(lesson);/***start from 0 */
+        updateLevel(list);/*start from 1*/
         g_lesson_in_level = lesson;
         g_level_in_levels = list;
         if((list == 1)&&(getCategory()== BEGINNERS))
@@ -462,6 +462,15 @@ function saveUserName(username, password)
     localStorage.setItem('password', password);
 }
 
+function saveLessonArray(indxArray, array)
+{
+    localStorage.setItem('lessonArray'+indxArray, array);
+}
+
+function getLessonArray(indxArray)
+{
+    return localStorage.getItem('lessonArray'+indxArray);
+}
 function getUserKey()
 {
     return localStorage.getItem('username') + localStorage.getItem('password')  ;
