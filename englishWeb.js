@@ -223,17 +223,17 @@ function getLessonLevel(level)
     document.getElementById("lessonTitleID").innerHTML="אנגלית "+ cat
     updateLevel(level);/*start from 1*/
     g_level_lesson = level;
+    document.getElementById("testBtnID").style.display = "none";
      if(level == 1)
      {
         document.getElementById("level_1_btnID").style.backgroundColor =  "#bb99ff";
         objectBtn = document.getElementById("level_2_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         objectBtn = document.getElementById("level_3_btnID").style.backgroundColor = "rgb(114, 142, 235)";
         document.getElementById("lesson_input").innerHTML=html_code1;
-        document.getElementById("testBtnID").style.display = "none";
         document.getElementById("testWordBtnID").style.display = "none";
         document.getElementById("againBtnID").style.display = "none";
           document.getElementById("addQWordBtnID").style.display = "block";
-          if(getCategory != BEGINNERS)
+          if(getCategory() != BEGINNERS)
           {
              document.getElementById("testBtnID").style.display = "block";
              document.getElementById("testWordBtnID").style.display = "block";
