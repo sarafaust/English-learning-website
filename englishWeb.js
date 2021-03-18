@@ -167,7 +167,7 @@ function printPageBtn()
 
 function settingBtn()
 {
-    window.print();
+     window.location = "http://clickenglish.unaux.com/buyPermission.php"
 }
 
 function infoBtn()
@@ -297,33 +297,35 @@ function getLastLessonName(name)
 {
     return localStorage.getItem('LastLessonName'); // students/bugginers/buisness
 }
-     function lessonBtnFunc(list, lesson)
-    {
-        updateCourseNum(lesson);/***start from 0 */
-        updateLevel(list);/*start from 1*/
-        g_lesson_in_level = lesson;
-        g_level_in_levels = list;
-        if((list == 1)&&(getCategory()== BEGINNERS))
-        {
-            updateBtnLevel1(lesson)
-        }
 
-        if(getCategory()== STUDENTS)//students
+function lessonBtnFunc(list, lesson)
+{
+    updateCourseNum(lesson);/***start from 0 */
+    updateLevel(list);/*start from 1*/
+    g_lesson_in_level = lesson;
+    g_level_in_levels = list;
+    if((list == 1)&&(getCategory()== BEGINNERS))
+    {
+        updateBtnLevel1(lesson)
+    }
+
+    if(getCategory()== STUDENTS)//students
+    {
+        document.getElementById("addQWordBtnID").style.display = "none";
+        if((list == 1) && (lesson <= 35))
         {
-            document.getElementById("addQWordBtnID").style.display = "none";
-            if((list == 1) && (lesson <= 35))
-            {
-                document.getElementById("addQWordBtnID").style.display = "block";
-            }
-        }
-        if(getCategory()== BUSINESS)
-        {
-            if((lesson == 21) || (lesson == 63))
-            {
-                document.getElementById("addQWordBtnID").style.display = "block";
-            }
+            document.getElementById("addQWordBtnID").style.display = "block";
         }
     }
+    if(getCategory()== BUSINESS)
+    {
+        if((lesson == 21) || (lesson == 63))
+        {
+            document.getElementById("addQWordBtnID").style.display = "block";
+        }
+    }
+}
+
 function updateBtnLevel1(lesson)
 {
     if(getCategory()!= BEGINNERS)
@@ -346,6 +348,11 @@ function updateBtnLevel1(lesson)
 }
     function updateBtn(btnName)
     {
+
+        if(!gardLesson(getCourseNum()))
+        {
+            return;
+        }
         // againBtn
         // addQWordBtn
         // testWordBtn
@@ -478,4 +485,34 @@ function getLessonArray(indxArray)
 function getUserKey()
 {
     return localStorage.getItem('username') + localStorage.getItem('password')  ;
+}
+
+function gardLesson(lesson)
+{
+
+    if((lesson != 0) && (!havePermmision()))
+    {
+        alert("הי - אינך יכול לגשת לשיעורים אלו- על מנת לגשת עליך לקנות הרשאה בדף http://clickenglish.unaux.com/lesson.php")
+        return false
+    }
+    return true
+}
+
+function havePermmision()
+{
+    userKey = getUserKey()
+
+    $.ajax({
+    type: "POST",
+    url: "gard_server.php",
+    async: false,
+    data: {userKey: userKey},
+    success: function(response) { resualt = response; }
+    });
+
+    if(resualt !=0 )
+    {
+        return true
+    }
+   return false
 }

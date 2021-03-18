@@ -6,7 +6,7 @@ document.head.appendChild(imported);
 GLOBAL_PERMISSION = "FREE2021"
 function checkCodePerm()
 {
-    var persmission = document.getElementById("btnPerID").nodeValue
+    var persmission = document.getElementById("permissionID").value
     if(persmission == GLOBAL_PERMISSION)
     {
         userKey = getUserKey()
@@ -18,6 +18,7 @@ function checkCodePerm()
             success: function(response) { resualt = response; }
             });
 
-        return resualt
+
     }
+    closeBtn()
 }
