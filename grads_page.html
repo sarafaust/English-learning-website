@@ -12,9 +12,9 @@
 
   <title>English Demo</title>
 </head>
-
 <body style="margin:0; height:100%; max-width:100%" >
 <script src="englishWeb.js"></script>
+<script src="grads_page.js"></script>
 
     <div class="container">
         <div class="top">
@@ -31,13 +31,13 @@
     </div>
 
                 <div id="btns_levels_wrap" >
-                    <button class="btnLenvelGrad" onclick="updateGradsData(1)"> רמה  1</button>
-                    <button class="btnLenvelGrad" onclick="updateGradsData(2)"> רמה  2</button>
                     <button class="btnLenvelGrad" onclick="updateGradsData(3)"> רמה  3</button>
+                    <button class="btnLenvelGrad" onclick="updateGradsData(2)"> רמה  2</button>
+                    <button class="btnLenvelGrad" onclick="updateGradsData(1)"> רמה  1</button>
                 </div>
                 <label id="label_for_grads">ציונים לרמה  1</label>
                 <div id="informationGrads">
-                  <table class="gradsTable" border="1">
+                  <table class="gradsTable" id="gradesTableID" border="1">
           <tr><th>תרגול</th><th>מבחן</th><th>שם השיעור</th></tr>
           <tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td></tr>
           <tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td></tr>
