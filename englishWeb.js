@@ -282,6 +282,10 @@ function getLessonLevel(level)
         document.getElementById("addQWordBtnID").style.display = "none";
 
      }
+
+    //TODO: not suport yet tests - to all levels.(have to delete this row after enabling )
+    document.getElementById("testBtnID").style.display = "none";
+
  }
 
 function saveLastLessonName(name)
