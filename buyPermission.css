@@ -1,0 +1,32 @@
+#titleID{
+	font-size: 2rem;
+	margin-top: 5rem;
+	width:100%;
+	padding-left: 30%;
+}
+#perCodeWrpID{
+	padding-top: 2rem;
+	width: 100%;
+	padding-left: 33%;
+}
+#permissionID{
+	width: 40%;
+}
+
+#btnPerID
+{
+	width: 15%;
+}
+#perBuyID{
+	padding-top: 2rem;
+}
+#t_buyID{
+	padding-left: 50%;
+	font-size: 2rem;
+
+}
+#coWrprID
+{
+	margin-left: 51%;
+	padding-top: 1rem;
+}
