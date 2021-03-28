@@ -89,7 +89,7 @@ textLsnFile = <?php echo json_encode($txtData); ?>;
                 <a onclick="changeAudioModeBtn()" title="שמע" ><img class="serviceBtn" src=".\assets\images\png\volT.png"></a>
                 <a onclick="languegeModeBtn()"  title="שפה"><img class="serviceBtn" src=".\assets\images\png\LangEng.png"></a>
                 <a onclick="printPageBtn()" title="הדפס"><img class="serviceBtn" src=".\assets\images\png\print.png"></a>
-                <a onclick="settingBtn()" title="הגדות"><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
+                <a onclick="settingBtn()" title="רכוש הרשאה"><img class="serviceBtn" src=".\assets\images\png\setting.png"></a>
                 <a onclick="infoBtn()" title="מידע"><img class="serviceBtn" src=".\assets\images\png\help.png"></a>
                 <a onclick="closeBtn()" title="סגור"><img class="serviceBtn" src=".\assets\images\png\close.png"></a>
             </div>
@@ -103,7 +103,7 @@ textLsnFile = <?php echo json_encode($txtData); ?>;
         </div>
         <div class="bottom">
             <div class="left">
-                <label class="label">שים לב: באפשרותכם לראות את התרגום של כל מילה בכל זמן על ידי לחיצה על הכפתור הימני של העכבר</label>
+                <label class="label"></label>
                 <div id="wrrperContentID">
                   <div   id="insLabelID"> התאם את האות עם  שמה</div>
                   <div class="wrrpListID" id="ListContentID">
