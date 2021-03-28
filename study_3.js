@@ -4,6 +4,8 @@
 
  function loadData()
  {
+    document.getElementById("tftableID").innerHTML = html_codeGrammer
+
      document.getElementById("titleID").innerHTML  = "  אוצר מילים לרמה "+level+ " לשיעור " + lesson
      document.getElementById("progressBarID").max = data_length;
      var html_code = "<select size='5' name='' id='selectListID' class='form-control'>"+'\n';

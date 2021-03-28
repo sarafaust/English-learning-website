@@ -48,6 +48,18 @@ foreach($englishWords as $item) {
     $EngInHebList=$EngInHebList.(string)$item->EngInHeb."@@@";
     $PartOfSpeechHebList=$PartOfSpeechHebList.(string)$item->PartOfSpeechHeb."@@@.";
 }
+
+$xml = simplexml_load_file("XMLVocalization.xml");
+$gramerVecWords = $xml->xpath('//vocalization/voc');
+
+foreach($gramerVecWords as $item) {
+    $gramerVecHeb=$gramerVecHeb.(string)$item->heb."@@@";
+    $gramerVecEng=$gramerVecEng.(string)$item->eng."@@@";
+    $gramerVecLike=$gramerVecLike.(string)$item->like."@@@";
+    $gramerVecWord=$gramerVecWord.(string)$item->word."@@@";
+    $gramerVecEngInHeb=$gramerVecEngInHeb.(string)$item->EngInHeb."@@@.";
+}
+echo $gramerVecWord;
 ?>
 
 <script type="text/javascript">
@@ -90,6 +102,53 @@ $.each(PartOfSpeechHebListTmp, function(i, el){
 });
 
 data_length= englishWordsListArray.length -1
+
+//grammer:
+
+gramerVecHeb = <?php echo json_encode($gramerVecHeb); ?>;
+gramerVecEng = <?php echo json_encode($gramerVecEng); ?>;
+gramerVecEngInHeb = <?php echo json_encode($gramerVecEngInHeb); ?>;
+gramerVecLike = <?php echo json_encode($gramerVecLike); ?>;
+gramerVecWord = <?php echo json_encode($gramerVecWord); ?>;
+
+gramerVecHebTmp = gramerVecHeb.split("@@@");
+gramerVecEngTmp = gramerVecEng.split("@@@");
+gramerVecEngInHebTmp = gramerVecEngInHeb.split("@@@");
+gramerVecLikeTmp = gramerVecLike.split("@@@");
+gramerVecWordTmp = gramerVecWord.split("@@@");
+
+gramerVecHebArray = [];
+$.each(gramerVecHebTmp, function(i, el){
+    if($.inArray(el, gramerVecHebArray) === -1) gramerVecHebArray.push(el);
+});
+
+gramerVecEngArray = [];
+$.each(gramerVecEngTmp, function(i, el){
+    if($.inArray(el, gramerVecEngArray) === -1) gramerVecEngArray.push(el);
+});
+
+gramerVecEngInHebArray = [];
+$.each(gramerVecEngInHebTmp, function(i, el){
+    if($.inArray(el, gramerVecEngInHebArray) === -1) gramerVecEngInHebArray.push(el);
+});
+
+gramerVecLikeArray = [];
+$.each(gramerVecLikeTmp, function(i, el){
+    if($.inArray(el, gramerVecLikeArray) === -1) gramerVecLikeArray.push(el);
+});
+
+gramerVecWordArray = [];
+$.each(gramerVecWordTmp, function(i, el){
+    if($.inArray(el, gramerVecWordArray) === -1) gramerVecWordArray.push(el);
+});
+
+data2_length= gramerVecHebArray.length -1
+
+html_codeGrammer = "<tr><th>תעתיק</th><th>עזרי זכרון</th><th>אנגלית</th><th>עברית</th></tr>"
+ for (i = 0; i < data2_length; i++) {
+        html_codeGrammer += "<tr><td>"+gramerVecEngInHebArray[i]+"</td><td>"+gramerVecWordArray[i]+" כמו במילה "+"</td><td>"+gramerVecEngArray[i]+"</td><td>"+gramerVecHebArray[i]+"</td></tr>";
+      }
+document.getElementById("tftableID").innerHTML = html_codeGrammer
 
 </script>
 
@@ -174,7 +233,7 @@ data_length= englishWordsListArray.length -1
                          </div>
                            <div  class="modal-content" id="grammerContent" >
 
-<table class="tftable" border="1">
+<table class="tftable" border="1" id="tftableID">
 <tr><th>תעתיק</th><th>עזרי זכרון</th><th>אנגלית</th><th>עברית</th></tr>
 <tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td><td>Row:1 Cell:4</td></tr>
 <tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td><td>Row:2 Cell:4</td></tr>
