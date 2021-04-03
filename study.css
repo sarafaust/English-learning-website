@@ -261,10 +261,9 @@ nav ul{overflow:hidden;width:100%;  overflow-y:scroll; text-align: left;  float:
     text-align: right;
     margin-right: 3;
       position: relative;
-  top: -0.5em;
-  margin-left: 51em;
-  display: inline;
+  top: 0.2em;
   background-color: white;
+  margin-bottom: 1rem;
 }
 
 #text_row2
