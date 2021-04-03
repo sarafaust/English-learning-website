@@ -11,7 +11,79 @@
   <title>English Demo</title>
 </head>
 
-<body style="margin:0; height:100%; max-width:100%">
+<?php
+$xml = simplexml_load_file("XMLVocalization.xml");
+$gramerVecWords = $xml->xpath('//vocalization/voc');
+
+foreach($gramerVecWords as $item) {
+    $gramerVecHeb=$gramerVecHeb.(string)$item->heb."@@@";
+    $gramerVecEng=$gramerVecEng.(string)$item->eng."@@@";
+    $gramerVecLike=$gramerVecLike.(string)$item->like."@@@";
+    $gramerVecWord=$gramerVecWord.(string)$item->word."@@@";
+    $gramerVecEngInHeb=$gramerVecEngInHeb.(string)$item->EngInHeb."@@@.";
+}
+?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+//grammer:
+
+gramerVecHeb = <?php echo json_encode($gramerVecHeb); ?>;
+gramerVecEng = <?php echo json_encode($gramerVecEng); ?>;
+gramerVecEngInHeb = <?php echo json_encode($gramerVecEngInHeb); ?>;
+gramerVecLike = <?php echo json_encode($gramerVecLike); ?>;
+gramerVecWord = <?php echo json_encode($gramerVecWord); ?>;
+
+gramerVecHebTmp = gramerVecHeb.split("@@@");
+gramerVecEngTmp = gramerVecEng.split("@@@");
+gramerVecEngInHebTmp = gramerVecEngInHeb.split("@@@");
+gramerVecLikeTmp = gramerVecLike.split("@@@");
+gramerVecWordTmp = gramerVecWord.split("@@@");
+
+// gramerVecHebArray = [];
+gramerVecHebArray = gramerVecHebTmp;
+// $.each(gramerVecHebTmp, function(i, el){
+//     if($.inArray(el, gramerVecHebArray) === -1) gramerVecHebArray.push(el);
+// });
+
+// gramerVecEngArray = [];
+gramerVecEngArray = gramerVecEngTmp;
+// $.each(gramerVecEngTmp, function(i, el){
+//     if($.inArray(el, gramerVecEngArray) === -1) gramerVecEngArray.push(el);
+// });
+
+// gramerVecEngInHebArray = [];
+gramerVecEngInHebArray = gramerVecEngInHebTmp;
+// $.each(gramerVecEngInHebTmp, function(i, el){
+//     if($.inArray(el, gramerVecEngInHebArray) === -1) gramerVecEngInHebArray.push(el);
+// });
+
+// gramerVecLikeArray = [];
+gramerVecLikeArray = gramerVecLikeTmp;
+// $.each(gramerVecLikeTmp, function(i, el){
+//     if($.inArray(el, gramerVecLikeArray) === -1) gramerVecLikeArray.push(el);
+// });
+
+// gramerVecWordArray = [];
+gramerVecWordArray = gramerVecWordTmp;
+// $.each(gramerVecWordTmp, function(i, el){
+//     if($.inArray(el, gramerVecWordArray) === -1) gramerVecWordArray.push(el);
+// });
+
+data2_length= gramerVecHebArray.length -1
+
+html_codeGrammer = "<tr><th>תעתיק</th><th>עזרי זכרון</th><th>אנגלית</th><th>עברית</th></tr>"
+ for (i = 0; i < data2_length; i++) {
+        html_codeGrammer += "<tr><td>"+gramerVecEngInHebArray[i]+"</td><td>"+gramerVecWordArray[i]+" כמו במילה "+"</td><td>"+gramerVecEngArray[i]+"</td><td>"+gramerVecHebArray[i]+"</td></tr>";
+      }
+
+
+function loadDataTable()
+{
+    document.getElementById("tftableID").innerHTML = html_codeGrammer
+}
+</script>
+
+<body style="margin:0; height:100%; max-width:100%" onload="loadDataTable()" >
     <script src="practice.js"></script>
     <div class="container">
         <div class="top">
@@ -47,7 +119,7 @@
 		.tftable td {text-align: right;font-size:1.1rem;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
 		.tftable tr:hover {background-color:#ffffff;}
 		</style>
-						<table class="tftable" border="1">
+						<table class="tftable" border="1" id="tftableID">
 						<tr><th>תעתיק</th><th>עזרי זכרון</th><th>אנגלית</th><th>עברית</th></tr>
 						<tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td><td>Row:1 Cell:4</td></tr>
 						<tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td><td>Row:2 Cell:4</td></tr>
